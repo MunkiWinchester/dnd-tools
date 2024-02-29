@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+@mixin scrollbarMixin {
+    /* Works on Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-color) var(--scrollbar-bg);
+    }
+}

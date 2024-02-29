@@ -1,0 +1,30 @@
+$animation-duration: 300ms;
+$animation-function: ease-in-out;
+
+$container-padding-block: 24px;
+$container-padding-inline: 40px;
+$container-padding-mobile: 16px;
+
+$border-radius: 10px;
+
+$horizontal-padding: 16px;
+
+$overall-max-width-desktop: 2560px;
+
+$toast-width: min(80vw, 375px);
+$toast-height: 120px;
+
+$toolbar-height: 60px;
+$header-bar-height: 65px;
+
+// #region Z Indices
+
+$z-indices: (
+    'menu': 50,
+    'toolbar': 100,
+    'dialog': 300,
+    'tooltip': 350,
+    'context': 400
+);
+
+// #endregion Z Indices

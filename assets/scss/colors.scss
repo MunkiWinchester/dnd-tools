@@ -1,0 +1,24 @@
+@use 'sass:color';
+
+// #region BASE COLORS
+
+$white: oklch(98.2% 0.004 91.45);
+$gray: oklch(9.21% 0 0);
+$gray-90: oklch(12.21% 0.015 304.04);
+$gray-70: oklch(70.9% 0.015 304.04);
+$gray-40: oklch(36.98% 0.014 302.71);
+$gray-10: oklch(6.98% 0.014 302.71);
+
+$bright-blue: oklch(51.01% 0.274 263.83);
+$electric-violet: oklch(53.18% 0.28 296.97);
+$french-violet: oklch(47.66% 0.246 305.88);
+$vivid-pink: oklch(69.02% 0.277 332.77);
+$hot-red: oklch(61.42% 0.238 15.34);
+$orange-red: oklch(63.32% 0.24 31.68);
+
+$bg-neutral1-light: oklch(90.2% 0.02 89.45);
+$bg-neutral2-light: oklch(80.2% 0.02 89.45);
+$bg-neutral1-dark: oklch(16.37% 0.006 300);
+$bg-neutral2-dark: oklch(13.37% 0.006 298);
+
+// #endregion BASE COLORS

@@ -1,0 +1,15 @@
+@mixin shine-animation($background-color: var(--bg-neutral2), $shine-color: var(--bg-neutral1), $duration: calc($animation-duration * 4)) {
+    background-color: $background-color;
+    background-image: linear-gradient(120deg, $background-color 8%, $shine-color 18%, $background-color 33%);
+    // We want to have a high size here to not have a straight border on the shine
+    background-size: 500% 100%;
+    // We want to multiply the duration with our factor of the size
+    animation: shine-keyframes calc($duration * 5) infinite linear;
+}
+
+@keyframes shine-keyframes {
+    to {
+        // Since the shine background size is increased we also want to move it by that percentage
+        background-position-x: -500%;
+    }
+}

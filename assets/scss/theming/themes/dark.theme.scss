@@ -1,0 +1,50 @@
+@mixin dark-theme {
+    // Flat
+    --primary: #{$white};
+    --secondary: #{$bright-blue};
+    --tertiary: #{$electric-violet};
+
+    // Text
+    --title: #{$white};
+    --subtitle: #{$gray-70};
+    --placeholder: #{$gray-40};
+    --on-bg: #{$bg-neutral1-dark};
+
+    // Colors
+    --bright-blue: #{$bright-blue};
+    --electric-violet: #{$electric-violet};
+    --french-violet: #{$french-violet};
+    --vivid-pink: #{$vivid-pink};
+    --hot-red: #{$hot-red};
+    --orange-red: #{$orange-red};
+
+    // Background/Flat
+    --bg-neutral1: #{$bg-neutral1-dark};
+    --bg-neutral2: #{$bg-neutral2-dark};
+    --bg-gray1: #{$bg-neutral2-light};
+    --bg-gray2: #{$bg-neutral1-light};
+    --bg-stroke: #{$gray-70};
+    --bg-container: #{$gray-90};
+
+    // Scrollbar
+    --scrollbar-color: #{$gray-70};
+    --scrollbar-bg: #{$gray-40};
+
+    // #region GRADIENT
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+        180deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%
+    );
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+        90deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%
+    );
+
+    // #endregion GRADIENT
+}

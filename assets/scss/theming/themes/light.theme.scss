@@ -1,0 +1,50 @@
+@mixin light-theme {
+    // Flat
+    --primary: #{$gray};
+    --secondary: #{$bright-blue};
+    --tertiary: #{$electric-violet};
+
+    // Text
+    --title: #{$gray};
+    --subtitle: #{$gray-70};
+    --placeholder: #{$gray-40};
+    --on-bg: #{$white};
+
+    // Colors
+    --bright-blue: #{$bright-blue};
+    --electric-violet: #{$electric-violet};
+    --french-violet: #{$french-violet};
+    --vivid-pink: #{$vivid-pink};
+    --hot-red: #{$hot-red};
+    --orange-red: #{$orange-red};
+
+    // Background/Flat
+    --bg-neutral1: #{$bg-neutral1-light};
+    --bg-neutral2: #{$bg-neutral2-light};
+    --bg-gray1: #{$bg-neutral2-dark};
+    --bg-gray2: #{$bg-neutral1-dark};
+    --bg-stroke: #{$gray-10};
+    --bg-container: #{$white};
+
+    // Scrollbar
+    --scrollbar-color: #{$gray-40};
+    --scrollbar-bg: #{$gray-70};
+
+    // #region GRADIENT
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+        180deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%
+    );
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+        90deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%
+    );
+
+    // #endregion GRADIENT
+}
