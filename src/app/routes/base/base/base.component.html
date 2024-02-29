@@ -1,0 +1,16 @@
+<div>
+    <h3>Inspirations</h3>
+    <div class="pill-group">
+        @for (item of inspirations; track item.title) {
+        <div class="pill dnd-cursor dnd-no-user-selection">
+            <input class="dnd-cursor" type="checkbox" [id]="item.title" [checked]="item.checked">
+            <label class="dnd-cursor" [for]="item.title">{{ item.title }}</label><br>
+        </div>
+        }
+    </div>
+</div>
+<div class="divider" role="separator" aria-label="Divider"></div>
+<div>
+    <h3>Currency</h3>
+    <p>{{ currency | json }}</p>
+</div>

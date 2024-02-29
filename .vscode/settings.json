@@ -1,0 +1,10 @@
+{
+    "typescript.preferences.quoteStyle": "single",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.trimAutoWhitespace": true,
+    "i18n-ally.localesPaths": [
+        "src/assets/i18n"
+    ],
+    "files.eol": "\n"
+}

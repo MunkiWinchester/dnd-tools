@@ -1,0 +1,46 @@
+@import '../../../../assets/scss/variables.scss';
+@import '../../../../assets/scss/devices.scss';
+
+@mixin full {
+    height: 100%;
+}
+
+:host {
+    @include full();
+    width: 100%;
+    display: inline-block;
+
+    .dnd-scroll-area-component {
+        @include full();
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+
+        .dnd-scroll-area-container {
+            @include full();
+            display: flex;
+
+            .dnd-scroll-area-body {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .dnd-scroll-area-content {
+                    flex: 1;
+                }
+            }
+        }
+
+        .dnd-scroll-area-header > div:first-of-type {
+            margin-bottom: $horizontal-padding;
+        }
+
+        .dnd-scroll-area-footer > div:first-of-type {
+            margin-top: $horizontal-padding;
+        }
+
+        .dnd-scroll-area-content-scroll {
+            overflow: auto;
+        }
+    }
+}

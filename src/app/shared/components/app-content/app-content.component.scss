@@ -1,0 +1,18 @@
+@use 'sass:map';
+@import '../../../../assets/scss/variables.scss';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+
+    .dnd-app-container {
+        overflow: auto;
+        height: calc(100% - calc($container-padding-block * 2));
+        padding: $container-padding-block $container-padding-inline;
+    }
+}

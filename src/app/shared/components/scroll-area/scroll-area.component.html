@@ -1,0 +1,16 @@
+<div class="dnd-scroll-area-component">
+    <div class="dnd-scroll-area-container">
+        <div class="dnd-scroll-area-body">
+            <div class="dnd-scroll-area-header" (scroll.passive)="emitScroll($event, 'header')">
+                <ng-content select="[header]"></ng-content>
+            </div>
+            <div class="dnd-scroll-area-content dnd-scroll-area-content-scroll"
+                (scroll.passive)="emitScroll($event, 'content')">
+                <ng-content select="[content]"></ng-content>
+            </div>
+            <div class="dnd-scroll-area-footer" (scroll.passive)="emitScroll($event, 'footer')">
+                <ng-content select="[footer]"></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

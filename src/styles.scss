@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/animations.scss';
+@import './assets/scss/typography.scss';
+@import './assets/scss/variables.scss';
+@import './assets/scss/scrollbar.scss';
+@import './assets/scss/theming/core.theming.scss';
+@import './assets/scss/devices.scss';
+@import './assets/scss/utils.scss';
+@import './assets/scss/scrollbar.scss';
+
+@include scrollbarMixin();
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    @include typography-main();
+}
+
+.theme-transition {
+    transition: all 500ms ease;
+}
+
+input,
+select,
+button,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    &:has(dnd-backdrop:not(.hidden)) {
+        overflow: hidden;
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+a {
+    @include dnd-cursor();
+}

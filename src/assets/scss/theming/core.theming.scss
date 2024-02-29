@@ -1,0 +1,59 @@
+@import './themes/light.theme.scss';
+@import './themes/dark.theme.scss';
+
+[data-theme='light'] {
+    @include light-theme();
+}
+[data-theme='dark'] {
+    @include dark-theme();
+}
+
+html,
+body {
+    color: var(--title);
+    background-color: var(--bg-neutral1);
+}
+
+.color-primary {
+    color: var(--primary);
+}
+.color-secondary {
+    color: var(--secondary);
+}
+.color-tertiary {
+    color: var(--tertiary);
+}
+.color-title {
+    color: var(--title);
+}
+.color-subtitle {
+    color: var(--subtitle);
+}
+.color-placeholder {
+    color: var(--placeholder);
+}
+.color-on-bg {
+    color: var(--on-bg);
+}
+
+.bg-primary {
+    background-color: var(--primary);
+}
+.bg-secondary {
+    background-color: var(--secondary);
+}
+.bg-tertiary {
+    background-color: var(--tertiary);
+}
+.bg-neutral1 {
+    background-color: var(--bg-neutral1);
+}
+.bg-neutral2 {
+    background-color: var(--bg-neutral2);
+}
+.bg-gray1 {
+    background-color: var(--bg-gray1);
+}
+.bg-gray2 {
+    background-color: var(--bg-gray2);
+}
