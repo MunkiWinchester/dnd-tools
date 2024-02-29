@@ -34,10 +34,7 @@ export class BaseComponent implements OnInit, OnDestroy {
     currencyFactor: number = 10;
 
     goldFormControl: FormControl<number | null> = new FormControl(
-        null,
-        [
-            Validators.min(-9)
-        ]
+        null
     );
     silverFormControl: FormControl<number | null> = new FormControl(
         null,

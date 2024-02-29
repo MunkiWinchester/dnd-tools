@@ -4,15 +4,19 @@
 @mixin typography-black {
     font-weight: 900;
 }
+
 @mixin typography-bold {
     font-weight: 700;
 }
+
 @mixin typography-medium {
     font-weight: 500;
 }
+
 @mixin typography-regular {
     font-weight: 400;
 }
+
 // #endregion font weight mixins
 
 @mixin typography-main {
@@ -29,38 +33,47 @@
     font-size: 40px;
     line-height: 60px;
 }
+
 @mixin typography-h2 {
     font-size: 32px;
     line-height: 48px;
 }
+
 @mixin typography-h3 {
     font-size: 24px;
     line-height: 32px;
 }
+
 @mixin typography-h4 {
     font-size: 20px;
     line-height: 30px;
 }
+
 @mixin typography-h5 {
     font-size: 18px;
     line-height: 26px;
 }
+
 @mixin typography-h6 {
     font-size: 16px;
     line-height: 24px;
 }
+
 @mixin typography-button-small {
     font-size: 12px;
     line-height: 20px;
 }
+
 @mixin typography-button-medium {
     font-size: 14px;
     line-height: 22px;
 }
+
 @mixin typography-button-medium-uppercase {
     font-size: 14px;
     line-height: 26px;
 }
+
 @mixin typography-button-large {
     font-size: 16px;
     line-height: 24px;
@@ -72,25 +85,31 @@
     font-size: 16px;
     line-height: 22px;
 }
+
 @mixin typography-uppercase {
     text-transform: uppercase;
     font-size: 14px;
 }
+
 @mixin typography-capitalize {
     text-transform: capitalize;
 }
+
 @mixin typography-p {
     font-size: 14px;
     line-height: 24px;
 }
+
 @mixin typography-p-uppercase {
     font-size: 16px;
     line-height: 24px;
 }
+
 @mixin typography-description {
     font-size: 14px;
     line-height: 24px;
 }
+
 @mixin typography-input {
     font-size: 14px;
     line-height: 22px;
@@ -101,10 +120,12 @@
     font-size: 18px;
     line-height: 28px;
 }
+
 @mixin typography-caption {
     font-size: 12px;
     line-height: 18px;
 }
+
 @mixin typography-tiny {
     font-size: 10px;
     line-height: 16px;
@@ -129,6 +150,7 @@ h6,
     @include typography-bold;
     @include typography-capitalize;
     text-wrap: balance;
+    margin-block-start: 0;
 }
 
 h1,
@@ -170,14 +192,17 @@ h6,
 .weight-black {
     @include typography-black;
 }
+
 .font-weight-bold,
 .weight-bold {
     @include typography-bold;
 }
+
 .font-weight-medium,
 .weight-medium {
     @include typography-medium;
 }
+
 .font-weight-regular,
 .weight-regular {
     @include typography-regular;
