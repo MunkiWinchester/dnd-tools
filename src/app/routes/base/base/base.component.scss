@@ -2,8 +2,9 @@
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: stretch;
+    gap: 25px;
 
     .divider {
         width: 1px;
@@ -22,6 +23,7 @@
     .pill {
         display: flex;
         align-items: center;
+        gap: 5px;
         --pill-accent: var(--bright-blue);
         background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
         color: var(--pill-accent);
@@ -31,12 +33,6 @@
         border: 0;
         transition: background 0.3s ease;
         font-family: var(--inter-font);
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.4rem;
-        letter-spacing: -0.00875rem;
-        text-decoration: none;
     }
 
     .pill:hover {
@@ -59,5 +55,45 @@
 
     .pill-group svg {
         margin-inline-start: 0.25rem;
+    }
+
+    .currency-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        &-display {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+        }
+
+        &-form {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .control {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+
+                input {
+                    width: 75px;
+                }
+            }
+        }
+
+        .gold {
+            color: #ffd700;
+        }
+
+        .silver {
+            color: #d0d0d0;
+        }
+
+        .copper {
+            color: #b87333;
+        }
     }
 }

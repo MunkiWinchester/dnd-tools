@@ -1,16 +1,45 @@
 <div>
     <h3>Inspirations</h3>
-    <div class="pill-group">
-        @for (item of inspirations; track item.title) {
+    <form [formGroup]="inspirationForm" class="pill-group">
         <div class="pill dnd-cursor dnd-no-user-selection">
-            <input class="dnd-cursor" type="checkbox" [id]="item.title" [checked]="item.checked">
-            <label class="dnd-cursor" [for]="item.title">{{ item.title }}</label><br>
+            <input class="dnd-cursor" type="checkbox" id="insp-1" formControlName="insp1">
+            <label class="dnd-cursor" for="insp-1">Inspiration</label><br>
         </div>
-        }
-    </div>
+        <div class="pill dnd-cursor dnd-no-user-selection">
+            <input class="dnd-cursor" type="checkbox" id="insp-2" formControlName="insp2">
+            <label class="dnd-cursor" for="insp-2">Inspiration</label><br>
+        </div>
+        <div class="pill dnd-cursor dnd-no-user-selection">
+            <input class="dnd-cursor" type="checkbox" id="insp-3" formControlName="insp3">
+            <label class="dnd-cursor" for="insp-3">Inspiration</label><br>
+        </div>
+    </form>
 </div>
 <div class="divider" role="separator" aria-label="Divider"></div>
-<div>
+<div class="currency-container">
     <h3>Currency</h3>
-    <p>{{ currency | json }}</p>
+    <div class="currency-container-display" *ngIf="currencyValue | dndCurrency: currencyFactor; let currency;">
+        <span class="gold">{{ currency.gold }}g</span>
+        <span class="silver">{{ currency.silver }}s</span>
+        <span class="copper">{{ currency.copper }}c</span>
+    </div>
+
+    <form class="currency-container-form" [formGroup]="currencyForm">
+        <div class="control">
+            <input id="gold-input" type="number" formControlName="gold">
+            <label class="gold" for="gold-input">g</label>
+        </div>
+        <div class="control">
+            <input id="silver-input" type="number" formControlName="silver">
+            <label class="silver" for="silver-input">s</label>
+        </div>
+        <div class="control">
+            <input id="copper-input" type="number" formControlName="copper">
+            <label class="copper" for="copper-input">c</label>
+        </div>
+    </form>
+
+    <button type="button" [disabled]="!currencyForm.valid" (click)="updateCurrency()">
+        Add
+    </button>
 </div>

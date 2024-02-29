@@ -5,12 +5,14 @@ import { AppContentComponent } from './components/app-content/app-content.compon
 import { ScrollAreaComponent } from './components/scroll-area/scroll-area.component';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { CurrencyPipe } from './pipes/currency.pipe';
 
 @NgModule({
     declarations: [
         ScrollAreaComponent,
         AppContentComponent,
-        HeaderBarComponent
+        HeaderBarComponent,
+        CurrencyPipe
     ],
     imports: [
         CommonModule,
@@ -20,7 +22,8 @@ import { TranslateModule } from '@ngx-translate/core';
     exports: [
         ScrollAreaComponent,
         AppContentComponent,
-        HeaderBarComponent
+        HeaderBarComponent,
+        CurrencyPipe
     ]
 })
 export class SharedModule { }
