@@ -1,0 +1,63 @@
+@import '../../../../assets/scss/devices.scss';
+@import '../../../../assets/scss/utils.scss';
+@import '../../../../assets/scss/variables.scss';
+
+:host {
+    --border-radius: #{$border-radius};
+
+    .button {
+        transition: all $animation-duration $animation-function;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+
+        background-color: var(--btn-bg-color);
+        color: var(--btn-color);
+
+        border-color: var(--btn-border-color);
+        border-width: 1px;
+        border-style: solid;
+        box-sizing: border-box;
+
+        &:focus,
+        &:focus-visible {
+            outline: none;
+        }
+
+        &:not(.disabled) {
+            @include device(desktop) {
+                &:hover,
+                &:focus,
+                &:focus-visible {
+                    background-color: var(--btn-hovered-bg-color);
+                    border-color: var(--btn-hovered-border-color);
+                }
+            }
+
+            &:active {
+                background-color: var(--btn-pressed-bg-color);
+                border-color: var(--btn-pressed-border-color);
+            }
+        }
+
+        &.disabled,
+        &.disabled:hover {
+            background-color: var(--btn-disabled-bg-color);
+            border-color: var(--btn-disabled-border-color);
+            color: var(--btn-disabled-color);
+            @include dnd-cursor-disabled();
+        }
+
+        .button-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

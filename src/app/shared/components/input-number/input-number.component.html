@@ -1,0 +1,11 @@
+<div class="label" *ngIf="label">
+    {{ label | translate: labelInterpolateParams }}
+</div>
+<div>
+    <input type="number" placeholder="{{ placeholder | translate: placeholderInterpolateParams }}" [disabled]="disabled"
+        [ngClass]="{ 'erroneous': !!errors }" [value]="value ?? null" (keyup)="valueChanged($event)" autocomplete="off"
+        #cmp />
+</div>
+<div class="caption error" *ngIf="renderErrorMsg && errors && errors !== true">
+    {{ errors | json }}
+</div>

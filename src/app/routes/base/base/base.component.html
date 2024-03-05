@@ -29,7 +29,9 @@
         </div>
     </form>
 </div>
+
 <div class="divider" role="separator" aria-label="Divider"></div>
+
 <div class="currency-container">
     <h3>{{ 'BASE.CURRENCY.TITLE' | translate }}</h3>
     <div class="subheader currency-container-display"
@@ -40,26 +42,20 @@
     </div>
 
     <form class="currency-container-form" [formGroup]="currencyForm">
-        <div class="control">
-            <input id="gold-input" type="number" formControlName="gold">
-            <label class="gold" for="gold-input">g</label>
-        </div>
-        <div class="control">
-            <input id="silver-input" type="number" formControlName="silver">
-            <label class="silver" for="silver-input">s</label>
-        </div>
-        <div class="control">
-            <input id="copper-input" type="number" formControlName="copper">
-            <label class="copper" for="copper-input">c</label>
-        </div>
+        <dnd-input-number label="BASE.CURRENCY.GOLD" [formControl]="goldFormControl">
+        </dnd-input-number>
+
+        <dnd-input-number label="BASE.CURRENCY.SILVER" [formControl]="silverFormControl">
+        </dnd-input-number>
+
+        <dnd-input-number label="BASE.CURRENCY.COPPER" [formControl]="copperFormControl">
+        </dnd-input-number>
     </form>
 
     <div class="currency-container-actions">
-        <button class="dnd-cursor" type="button" [disabled]="!currencyForm.valid" (click)="updateCurrency('+')">
-            {{ 'BASE.ACTIONS.ADD' | translate }}
-        </button>
-        <button class="dnd-cursor" type="button" [disabled]="!currencyForm.valid" (click)="updateCurrency('-')">
-            {{ 'BASE.ACTIONS.SUBTRACT' | translate }}
-        </button>
+        <dnd-button text="BASE.ACTIONS.ADD" (click)="updateCurrency('+')" [disabled]="!currencyForm.valid">
+        </dnd-button>
+        <dnd-button text="BASE.ACTIONS.SUBTRACT" (click)="updateCurrency('-')" [disabled]="!currencyForm.valid">
+        </dnd-button>
     </div>
 </div>

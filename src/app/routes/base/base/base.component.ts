@@ -16,21 +16,11 @@ export class BaseComponent implements OnInit, OnDestroy {
     inspirationsAvailable: number = 1;
     inspirationsTotal: number = 3;
 
-    insp1FormControl: FormControl<boolean | null> = new FormControl(
-        true
-    );
-    insp2FormControl: FormControl<boolean | null> = new FormControl(
-        false
-    );
-    insp3FormControl: FormControl<boolean | null> = new FormControl(
-        false
-    );
+    insp1FormControl: FormControl<boolean | null>;
+    insp2FormControl: FormControl<boolean | null>;
+    insp3FormControl: FormControl<boolean | null>;
 
-    inspirationForm: FormGroup = this.formBuilder.group({
-        insp1: this.insp1FormControl,
-        insp2: this.insp2FormControl,
-        insp3: this.insp3FormControl
-    });
+    inspirationForm: FormGroup;
 
     //#endregion Inspirations
 
@@ -39,29 +29,11 @@ export class BaseComponent implements OnInit, OnDestroy {
     currencyValue: number = 0;
     currencyFactor: number = 10;
 
-    goldFormControl: FormControl<number | null> = new FormControl(
-        null
-    );
-    silverFormControl: FormControl<number | null> = new FormControl(
-        null,
-        [
-            Validators.min(-9),
-            Validators.max(9)
-        ]
-    );
-    copperFormControl: FormControl<number | null> = new FormControl(
-        null,
-        [
-            Validators.min(-9),
-            Validators.max(9)
-        ]
-    );
+    goldFormControl: FormControl<number | null>;
+    silverFormControl: FormControl<number | null>;
+    copperFormControl: FormControl<number | null>;
 
-    currencyForm: FormGroup = this.formBuilder.group({
-        gold: this.goldFormControl,
-        silver: this.silverFormControl,
-        copper: this.copperFormControl
-    });
+    currencyForm: FormGroup;
 
     //#endregion Currency
 
@@ -71,7 +43,48 @@ export class BaseComponent implements OnInit, OnDestroy {
 
     constructor(
         private formBuilder: FormBuilder
-    ) { }
+    ) {
+        this.insp1FormControl = new FormControl(
+            true
+        );
+        this.insp2FormControl = new FormControl(
+            false
+        );
+        this.insp3FormControl = new FormControl(
+            false
+        );
+
+        this.inspirationForm = this.formBuilder.group({
+            insp1: this.insp1FormControl,
+            insp2: this.insp2FormControl,
+            insp3: this.insp3FormControl
+        });
+
+
+        this.goldFormControl = new FormControl(
+            null
+        );
+        this.silverFormControl = new FormControl(
+            null,
+            [
+                Validators.min(-9),
+                Validators.max(9)
+            ]
+        );
+        this.copperFormControl = new FormControl(
+            null,
+            [
+                Validators.min(-9),
+                Validators.max(9)
+            ]
+        );
+
+        this.currencyForm = this.formBuilder.group({
+            gold: this.goldFormControl,
+            silver: this.silverFormControl,
+            copper: this.copperFormControl
+        });
+    }
 
     ngOnInit(): void {
         this.listenToValueChanges();

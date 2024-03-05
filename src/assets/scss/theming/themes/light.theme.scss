@@ -7,7 +7,7 @@
 
     // Text
     --title: #{$gray};
-    --subtitle: #{$gray-60};
+    --subtitle: #{$gray-70};
     --placeholder: #{$gray-20};
     --disabled: #{$gray-30};
     --link-disabled: #{$link-disabled-light};
@@ -21,6 +21,12 @@
     --hot-red: #{$hot-red};
     --orange-red: #{$orange-red};
 
+    // Status
+    --info: #{$vivid-pink};
+    --success: #{$bright-blue};
+    --warning: #{$orange-red};
+    --error: #{$hot-red};
+
     // Background/Flat
     --bg-neutral1: #{$bg-neutral1-light};
     --bg-neutral2: #{$bg-neutral2-light};
@@ -32,6 +38,18 @@
     // Scrollbar
     --scrollbar-color: #{$gray-40};
     --scrollbar-bg: #{$gray-5};
+
+    // Button
+    --btn-bg-color: transparent;
+    --btn-border-color: var(--primary);
+    --btn-color: var(--title);
+    --btn-disabled-bg-color: var(--bg-container);
+    --btn-disabled-border-color: var(--bg-stroke);
+    --btn-disabled-color: var(--placeholder);
+    --btn-hovered-bg-color: var(--bg-neutral2);
+    --btn-hovered-border-color: var(--primary);
+    --btn-pressed-bg-color: var(--bg-neutral2);
+    --btn-pressed-border-color: var(--subtitle);
 
     // #region GRADIENT
 

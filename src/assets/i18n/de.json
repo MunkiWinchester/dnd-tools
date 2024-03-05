@@ -5,7 +5,10 @@
             "SUBTRACT": "Subtrahieren"
         },
         "CURRENCY": {
-            "TITLE": "Währung"
+            "TITLE": "Währung",
+            "GOLD": "Gold",
+            "SILVER": "Silber",
+            "COPPER": "Kupfer"
         },
         "GENERAL": {
             "DAYS": "{value} {value, plural, one{Tag} other{Tage}}",

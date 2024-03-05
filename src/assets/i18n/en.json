@@ -5,7 +5,10 @@
             "SUBTRACT": "Subtract"
         },
         "CURRENCY": {
-            "TITLE": "Currency"
+            "TITLE": "Currency",
+            "GOLD": "Gold",
+            "SILVER": "Silver",
+            "COPPER": "Copper"
         },
         "GENERAL": {
             "DAYS": "{value} {value, plural, one{day} other{days}}",

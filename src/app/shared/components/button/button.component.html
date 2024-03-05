@@ -1,0 +1,6 @@
+<div class="button dnd-no-user-selection" role="button" [ngClass]="{'disabled': disabled }" (click)="emit($event)"
+    (keydown)="keyDown($event)" [tabindex]="disabled ? -1 : 0" #cmp>
+    <div class="button-label">
+        {{ text | translate }}
+    </div>
+</div>
