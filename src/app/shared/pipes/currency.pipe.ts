@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ICurrency } from '@interfaces/currency';
+import { ICurrency } from '@util/currency.interface';
 
 @Pipe({
     name: 'dndCurrency'

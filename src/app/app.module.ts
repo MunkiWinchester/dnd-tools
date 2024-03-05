@@ -7,6 +7,7 @@ import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-comp
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from '@shared/shared.module';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { SharedModule } from '@shared/shared.module';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
+        AngularSvgIconModule.forRoot(),
         TranslateModule.forRoot({
             defaultLanguage: 'en',
             useDefaultLang: true,

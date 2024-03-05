@@ -1,4 +1,24 @@
 {
+    "BASE": {
+        "ACTIONS": {
+            "ADD": "Addieren",
+            "SUBTRACT": "Subtrahieren"
+        },
+        "CURRENCY": {
+            "TITLE": "Währung"
+        },
+        "GENERAL": {
+            "DAYS": "{value} {value, plural, one{Tag} other{Tage}}",
+            "HOURS": "{value} {value, plural, one{Stunde} other{Stunden}}",
+            "MINUTES": "{value} {value, plural, one{Minute} other{Minuten}}",
+            "TIME_TILL": "Until {days} {days, plural, one{Tag} other{Tage}} {hours} {hours, plural, one{Stunde} other{Stunden}} {minutes} {minutes, plural, one{Minute} other{Minuten}}",
+            "GAME_DAY": "Game day"
+        },
+        "INSPIRATIONS": {
+            "TITLE": "{count, plural, one{Inspiration} other{Inspirationen}}",
+            "X_OF_Y_ACTIVE": "{x} von {y} {y, plural, one{Inspiration} other{Inspirationen}} verfügbar"
+        }
+    },
     "MENU": {
         "TITLE": "D&D Tools"
     }

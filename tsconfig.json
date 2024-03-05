@@ -21,13 +21,14 @@
         "module": "ES2022",
         "useDefineForClassFields": false,
         "strictNullChecks": true,
+        "resolveJsonModule": true,
         "lib": [
             "ES2022",
             "dom"
         ],
         "paths": {
-            "@interfaces/*": [
-                "src/app/interfaces/*"
+            "@util/*": [
+                "src/app/util/*"
             ],
             "@services/*": [
                 "src/app/services/*"
@@ -37,6 +38,9 @@
             ],
             "@shared/*": [
                 "src/app/shared/*"
+            ],
+            "@assets/*": [
+                "src/assets/*"
             ]
         }
     },
@@ -45,5 +49,9 @@
         "strictInjectionParameters": true,
         "strictInputAccessModifiers": true,
         "strictTemplates": true
-    }
+    },
+    "include": [
+        "src",
+        "scripts"
+    ]
 }

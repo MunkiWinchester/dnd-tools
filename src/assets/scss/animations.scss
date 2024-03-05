@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin shine-animation($background-color: var(--bg-neutral2), $shine-color: var(--bg-neutral1), $duration: calc($animation-duration * 4)) {
     background-color: $background-color;
     background-image: linear-gradient(120deg, $background-color 8%, $shine-color 18%, $background-color 33%);

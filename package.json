@@ -1,18 +1,25 @@
 {
     "name": "dnd-tools",
+    "displayName": "D&D Tools",
     "version": "0.0.0",
     "scripts": {
         "build": "ng build",
+        "bump-version": "tsx ./scripts/bump-version.ts",
         "dev": "npm run start",
         "lint": "ng lint",
         "ng": "ng",
         "prepare": "husky",
-        "publish": "ng deploy --base-href=/dnd-tools/",
+        "publish": "standard-version -a --no-verify && ng deploy --base-href=/dnd-tools/",
+        "postpublish": "git add --all && git commit -m \"build(release): version bump\" && git push --follow-tags",
         "start": "ng serve",
         "test": "ng test",
         "watch": "ng build --watch --configuration development"
     },
     "private": true,
+    "repository": {
+        "url": "https://github.com/MunkiWinchester/dnd-tools",
+        "type": "git"
+    },
     "dependencies": {
         "@angular/animations": "^17.2.0",
         "@angular/cdk": "^17.2.1",
@@ -62,6 +69,14 @@
         "karma-coverage": "~2.2.0",
         "karma-jasmine": "~5.1.0",
         "karma-jasmine-html-reporter": "~2.1.0",
+        "standard-version": "^9.5.0",
+        "tsx": "^4.7.1",
         "typescript": "~5.3.2"
+    },
+    "standard-version": {
+        "header": "# D&D Tools",
+        "scripts": {
+            "postbump": "npm run bump-version"
+        }
     }
 }

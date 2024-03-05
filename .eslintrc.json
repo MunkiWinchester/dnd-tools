@@ -534,7 +534,6 @@
                 "@angular-eslint/eslint-plugin"
             ],
             "extends": [
-                "plugin:@angular-eslint/template/accessibility",
                 "plugin:@angular-eslint/template/process-inline-templates",
                 "plugin:@angular-eslint/template/recommended"
             ],

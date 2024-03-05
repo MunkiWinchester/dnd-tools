@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { StorageKey } from '@util/storage-key.enum';
 import { Subject, takeUntil } from 'rxjs';
+import { AssetImage } from 'src/app/util/asset-image.enum';
 
 @Component({
     selector: 'dnd-base',
@@ -8,7 +10,11 @@ import { Subject, takeUntil } from 'rxjs';
     styleUrl: './base.component.scss'
 })
 export class BaseComponent implements OnInit, OnDestroy {
+
     //#region Inspirations
+
+    inspirationsAvailable: number = 1;
+    inspirationsTotal: number = 3;
 
     insp1FormControl: FormControl<boolean | null> = new FormControl(
         true
@@ -59,30 +65,17 @@ export class BaseComponent implements OnInit, OnDestroy {
 
     //#endregion Currency
 
-    private destroy$: Subject<void> = new Subject();
+    readonly ASSET_IMAGE: typeof AssetImage = AssetImage;
 
-    private readonly INSP_KEY: string = 'inspiration';
-    private readonly CURR_KEY: string = 'currency';
+    private destroy$: Subject<void> = new Subject();
 
     constructor(
         private formBuilder: FormBuilder
     ) { }
 
     ngOnInit(): void {
-        this.currencyValue = Number.parseInt(localStorage.getItem(this.CURR_KEY) ?? '0', 10);
-        const inspValue: string | null = localStorage.getItem(this.INSP_KEY);
-        if (inspValue) {
-            this.inspirationForm.patchValue(JSON.parse(inspValue) as { [key: string]: unknown });
-        }
-
-        this.inspirationForm.valueChanges
-            .pipe(
-                takeUntil(this.destroy$)
-            )
-            // eslint-disable-next-line rxjs-angular/prefer-async-pipe, rxjs/no-ignored-subscription
-            .subscribe(() => {
-                localStorage.setItem(this.INSP_KEY, JSON.stringify(this.inspirationForm.value));
-            });
+        this.listenToValueChanges();
+        this.loadValuesFromStorage();
     }
 
     ngOnDestroy(): void {
@@ -90,12 +83,40 @@ export class BaseComponent implements OnInit, OnDestroy {
         this.destroy$.complete();
     }
 
-    updateCurrency(): void {
-        this.currencyValue += this.copperFormControl.value ?? 0;
-        this.currencyValue += (this.silverFormControl.value ?? 0) * this.currencyFactor;
-        this.currencyValue += (this.goldFormControl.value ?? 0) * (this.currencyFactor * this.currencyFactor);
+    updateCurrency(type: '-' | '+'): void {
+        const operator: number = (type === '-' ? -1 : 1);
+        this.currencyValue += operator * (this.copperFormControl.value ?? 0);
+        this.currencyValue += operator * (this.silverFormControl.value ?? 0) * this.currencyFactor;
+        this.currencyValue += operator * (this.goldFormControl.value ?? 0) * (this.currencyFactor * this.currencyFactor);
 
-        localStorage.setItem(this.CURR_KEY, String(this.currencyValue));
+        localStorage.setItem(StorageKey.Currency, String(this.currencyValue));
         this.currencyForm.reset();
+    }
+
+    private listenToValueChanges(): void {
+        this.inspirationForm.valueChanges
+            .pipe(
+                takeUntil(this.destroy$)
+            )
+            // eslint-disable-next-line rxjs-angular/prefer-async-pipe, rxjs/no-ignored-subscription
+            .subscribe(() => {
+                localStorage.setItem(StorageKey.Inspiration, JSON.stringify(this.inspirationForm.value));
+                this.updateAvailableInspirations();
+            });
+    }
+
+    private loadValuesFromStorage(): void {
+        this.currencyValue = Number.parseInt(localStorage.getItem(StorageKey.Currency) ?? '0', 10);
+
+        const inspValue: string | null = localStorage.getItem(StorageKey.Inspiration);
+        if (inspValue) {
+            this.inspirationForm.patchValue(JSON.parse(inspValue) as { [key: string]: unknown });
+        }
+    }
+
+    private updateAvailableInspirations(): void {
+        this.inspirationsAvailable = (this.insp1FormControl.value ? 1 : 0)
+            + (this.insp2FormControl.value ? 1 : 0)
+            + (this.insp3FormControl.value ? 1 : 0);
     }
 }

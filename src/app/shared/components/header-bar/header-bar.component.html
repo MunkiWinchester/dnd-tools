@@ -3,10 +3,18 @@
         <h6>{{ 'MENU.TITLE' | translate }}</h6>
 
         <div class="today-container caption uppercase color-subtitle">
-            <span class="date">
+            <span>
+                {{
+                'BASE.GENERAL.TIME_TILL' | translate: {
+                days: durationTillNextSession.days(),
+                hours: durationTillNextSession.hours(),
+                minutes: durationTillNextSession.minutes()
+                }
+                }}
             </span>
-            <span class="time">
-            </span>
+            <h6>
+                {{ 'BASE.GENERAL.GAME_DAY' | translate }}
+            </h6>
         </div>
     </div>
 

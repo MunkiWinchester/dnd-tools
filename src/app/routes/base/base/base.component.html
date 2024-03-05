@@ -1,24 +1,39 @@
-<div>
-    <h3>Inspirations</h3>
+<div class="inspiration-container">
+    <h3>{{ 'BASE.INSPIRATIONS.TITLE'| translate: { count: 2} }}</h3>
+    <div class="subheader color-subtitle">
+        {{ 'BASE.INSPIRATIONS.X_OF_Y_ACTIVE' | translate: { x: inspirationsAvailable, y: inspirationsTotal } }}
+    </div>
     <form [formGroup]="inspirationForm" class="pill-group">
-        <div class="pill dnd-cursor dnd-no-user-selection">
-            <input class="dnd-cursor" type="checkbox" id="insp-1" formControlName="insp1">
-            <label class="dnd-cursor" for="insp-1">Inspiration</label><br>
+        <div class="pill dnd-cursor dnd-no-user-selection" [ngClass]="{ 'checked': insp1FormControl.value }"
+            (click)="insp1FormControl.setValue(!insp1FormControl.value)">
+            <svg-icon class="dnd-cursor inspiration-svg" [name]="ASSET_IMAGE.D20">
+            </svg-icon>
+            <input class="dnd-cursor" type="checkbox" id="insp-1" formControlName="insp1"
+                [ngStyle]="{ display: 'none' }">
         </div>
-        <div class="pill dnd-cursor dnd-no-user-selection">
-            <input class="dnd-cursor" type="checkbox" id="insp-2" formControlName="insp2">
-            <label class="dnd-cursor" for="insp-2">Inspiration</label><br>
+
+        <div class="pill dnd-cursor dnd-no-user-selection" [ngClass]="{ 'checked': insp2FormControl.value }" #insp2El
+            (click)="insp2FormControl.setValue(!insp2FormControl.value); insp2El.blur()">
+            <svg-icon class="dnd-cursor inspiration-svg" [name]="ASSET_IMAGE.D20">
+            </svg-icon>
+            <input class="dnd-cursor" type="checkbox" id="insp-2" formControlName="insp2"
+                [ngStyle]="{ display: 'none' }">
         </div>
-        <div class="pill dnd-cursor dnd-no-user-selection">
-            <input class="dnd-cursor" type="checkbox" id="insp-3" formControlName="insp3">
-            <label class="dnd-cursor" for="insp-3">Inspiration</label><br>
+
+        <div class="pill dnd-cursor dnd-no-user-selection" [ngClass]="{ 'checked': insp3FormControl.value }"
+            (click)="insp3FormControl.setValue(!insp3FormControl.value)">
+            <svg-icon class="dnd-cursor inspiration-svg" [name]="ASSET_IMAGE.D20">
+            </svg-icon>
+            <input class="dnd-cursor" type="checkbox" id="insp-3" formControlName="insp3"
+                [ngStyle]="{ display: 'none' }">
         </div>
     </form>
 </div>
 <div class="divider" role="separator" aria-label="Divider"></div>
 <div class="currency-container">
-    <h3>Currency</h3>
-    <div class="currency-container-display" *ngIf="currencyValue | dndCurrency: currencyFactor; let currency;">
+    <h3>{{ 'BASE.CURRENCY.TITLE' | translate }}</h3>
+    <div class="subheader currency-container-display"
+        *ngIf="currencyValue | dndCurrency: currencyFactor; let currency;">
         <span class="gold">{{ currency.gold }}g</span>
         <span class="silver">{{ currency.silver }}s</span>
         <span class="copper">{{ currency.copper }}c</span>
@@ -39,7 +54,12 @@
         </div>
     </form>
 
-    <button type="button" [disabled]="!currencyForm.valid" (click)="updateCurrency()">
-        Add
-    </button>
+    <div class="currency-container-actions">
+        <button class="dnd-cursor" type="button" [disabled]="!currencyForm.valid" (click)="updateCurrency('+')">
+            {{ 'BASE.ACTIONS.ADD' | translate }}
+        </button>
+        <button class="dnd-cursor" type="button" [disabled]="!currencyForm.valid" (click)="updateCurrency('-')">
+            {{ 'BASE.ACTIONS.SUBTRACT' | translate }}
+        </button>
+    </div>
 </div>

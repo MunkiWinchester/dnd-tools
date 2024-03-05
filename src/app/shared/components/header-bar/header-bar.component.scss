@@ -19,16 +19,11 @@
         -webkit-text-fill-color: transparent;
     }
 
-    .time {
-        min-width: 55px;
-    }
-
     &.hidden {
         display: none;
     }
 
     .header-bar {
-        // height: 72px;
         box-sizing: border-box;
         background: var(--bg-container);
         border-bottom: 1px solid;
@@ -40,8 +35,8 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 40px;
-        gap: 63px;
+        padding: $container-padding-block $container-padding-inline;
+        gap: $container-padding-inline;
 
         .greeting-container {
             display: flex;
@@ -51,6 +46,17 @@
             gap: 8px;
             flex: 1 0 33%;
             height: 100%;
+
+            .today-container {
+                padding: 3px 0 0 30px;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 6px;
+                height: 100%;
+            }
         }
 
         .action-container {
