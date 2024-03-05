@@ -72,7 +72,7 @@
 
             &:not(.checked) path {
                 transition: fill $animation-duration $animation-function;
-                fill: var(--placeholder);
+                fill: oklch(from var(--primary) l c h / 10%);
             }
             &.checked path {
                 transition: fill $animation-duration $animation-function;

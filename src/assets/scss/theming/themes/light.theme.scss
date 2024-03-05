@@ -3,11 +3,14 @@
     --primary: #{$gray};
     --secondary: #{$bright-blue};
     --tertiary: #{$electric-violet};
+    --gray: #{$gray};
 
     // Text
     --title: #{$gray};
-    --subtitle: #{$gray-40};
-    --placeholder: #{$gray-70};
+    --subtitle: #{$gray-60};
+    --placeholder: #{$gray-20};
+    --disabled: #{$gray-30};
+    --link-disabled: #{$link-disabled-light};
     --on-bg: #{$white};
 
     // Colors
@@ -21,14 +24,14 @@
     // Background/Flat
     --bg-neutral1: #{$bg-neutral1-light};
     --bg-neutral2: #{$bg-neutral2-light};
-    --bg-gray1: #{$bg-neutral2-dark};
-    --bg-gray2: #{$bg-neutral1-dark};
     --bg-stroke: #{$gray-10};
     --bg-container: #{$white};
+    --bg-gray1: #{$bg-neutral2-dark};
+    --bg-gray2: #{$gray-80};
 
     // Scrollbar
     --scrollbar-color: #{$gray-40};
-    --scrollbar-bg: #{$gray-70};
+    --scrollbar-bg: #{$gray-5};
 
     // #region GRADIENT
 

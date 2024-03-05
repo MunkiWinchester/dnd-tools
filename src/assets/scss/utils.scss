@@ -1,6 +1,7 @@
 @mixin dnd-cursor {
     cursor: pointer;
 }
+
 @mixin dnd-cursor-disabled {
     cursor: not-allowed;
     @include dnd-no-user-selection();
