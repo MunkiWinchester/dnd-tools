@@ -6,6 +6,8 @@
         "lokalise.i18n-ally",
         "sibiraj-s.vscode-scss-formatter",
         "mrmlnc.vscode-scss",
-        "pkief.material-icon-theme"
+        "pkief.material-icon-theme",
+        "jock.svg",
+        "dbaeumer.vscode-eslint"
     ]
 }

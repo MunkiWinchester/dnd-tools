@@ -3,18 +3,24 @@
     xmlns:svg="http://www.w3.org/2000/svg">
     <defs id="defs_d20">
         <linearGradient y2="0%" y1="0%" x2="100%" x1="0%" id="horizontal-gradient">
-            <stop stop-color="#fa2c05" offset="0%" id="horizontal-gradient_0" />
-            <stop stop-color="#f637e3" offset="50%" id="horizontal-gradient_05" />
-            <stop stop-color="#8514f5" offset="100%" id="horizontal-gradient_1" />
+            <stop stop-color="#f11653" offset="0%" id="horizontal-gradient_0" />
+            <stop stop-color="#fa2c05" offset="20%" id="horizontal-gradient_2" />
+            <stop stop-color="#f637e3" offset="40%" id="horizontal-gradient_4" />
+            <stop stop-color="#8514f5" offset="60%" id="horizontal-gradient_6" />
+            <stop stop-color="#8001c6" offset="80%" id="horizontal-gradient_8" />
+            <stop stop-color="#0546ff" offset="100%" id="horizontal-gradient_1" />
         </linearGradient>
         <linearGradient y2="100%" y1="0%" x2="0%" x1="0%" id="vertical-gradient">
-            <stop stop-color="#fa2c05" offset="0%" id="vertical-gradient_0" />
-            <stop stop-color="#f637e3" offset="50%" id="vertical-gradient_05" />
-            <stop stop-color="#8514f5" offset="100%" id="vertical-gradient_1" />
+            <stop stop-color="#f11653" offset="0%" id="horizontal-gradient_0" />
+            <stop stop-color="#fa2c05" offset="20%" id="horizontal-gradient_2" />
+            <stop stop-color="#f637e3" offset="40%" id="horizontal-gradient_4" />
+            <stop stop-color="#8514f5" offset="60%" id="horizontal-gradient_6" />
+            <stop stop-color="#8001c6" offset="80%" id="horizontal-gradient_8" />
+            <stop stop-color="#0546ff" offset="100%" id="horizontal-gradient_1" />
         </linearGradient>
     </defs>
-    <g id="g_d20">
-        <path id="path_d20"
-            d="m 84.162109,71.9375 -29.34375,31.14453 2.183594,2.05664 29.34375,-31.144529 z m -57.765625,0.326172 -2.201171,2.039062 29.34375,31.673826 2.201171,-2.03906 z m 58.980469,-1.226563 -1.517578,2.587891 12.818359,7.519531 1.517579,-2.585937 z m -60.30664,-0.109375 -13.453126,7.839844 1.511719,2.591797 13.453125,-7.837891 z M 96.847656,29.310547 83.818359,72.212891 86.689453,73.083984 99.71875,30.181641 Z M 12.964844,27.839844 10.085937,28.685547 23.328125,73.8125 26.207031,72.966797 Z m 42.564453,-11.308594 -0.71875,2.912109 43.855469,10.804688 0.71875,-2.912109 z m -1.464844,0 -41.630859,10.382813 0.726562,2.910156 41.63086,-10.38086 z m 2.308594,0.619141 -2.619141,1.460937 30.083985,53.919922 2.621093,-1.460937 z m -2.621094,0.0039 -30.085937,54.34375 2.625,1.453125 L 56.375,18.607422 Z m -28.24414,53.994141 v 3 h 59.111328 v -3 z M 53.404297,5.2617188 53.300781,18.855469 56.298828,18.878909 56.404297,5.2851593 Z M 56.499827,104.21757 11.65928,78.651888 10.173732,81.256689 55.014281,106.82237 Z m 42.070486,-25.56132 -44.845704,25.55664 1.486329,2.60547 44.845702,-25.556641 z m 1.289062,-51.130859 -3,0.01367 0.253906,53.669921 2.999999,-0.01367 z m 0.08903,-0.02728 L 54.746767,3.1514539 53.325158,5.7934496 98.525735,30.138465 Z m -86.993325,0.02728 -2.9999999,0.01367 0.2539059,53.669921 3,-0.01367 z M 54.736328,3.109375 9.9921875,27.548828 11.429687,30.181641 56.173828,5.7421875 Z" />
+    <g id="g_d20" stroke="black" stroke-width="1px" stroke-linejoin="round" fill="black">
+        <path id="p_d20"
+            d="M 55 3 L 100 26 L 100 80 L 55 105 L 10 80 L 10 26 Z M 97.292 79.504 L 88 73 L 59.829 100.317 Z M 98 28 L 98 27.511 L 56.172 17.286 L 87.588 69.647 Z M 55 103 L 85.938 73 L 24.062 73 Z M 55 18.666 L 23.3 71.5 L 86.7 71.5 Z M 12 27.511 L 12 28 L 22.412 69.647 L 53.828 17.286 Z M 12 78.273 L 20.942 71.769 L 12 36 Z M 50.171 100.317 L 22 73 L 12.708 79.504 Z M 98 36 L 89.058 71.769 L 98 78.273 Z M 56 5.511 L 56 15.244 L 92.499 24.167 Z M 17.501 24.166 L 54 15.244 L 54 5.511 Z" />
     </g>
 </svg>
