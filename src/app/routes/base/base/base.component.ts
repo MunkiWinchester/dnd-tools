@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { StorageKey } from '@util/storage-key.enum';
 import { Subject, takeUntil } from 'rxjs';
 import { AssetImage } from 'src/app/util/asset-image.enum';
@@ -65,18 +65,10 @@ export class BaseComponent implements OnInit, OnDestroy {
             null
         );
         this.silverFormControl = new FormControl(
-            null,
-            [
-                Validators.min(-9),
-                Validators.max(9)
-            ]
+            null
         );
         this.copperFormControl = new FormControl(
-            null,
-            [
-                Validators.min(-9),
-                Validators.max(9)
-            ]
+            null
         );
 
         this.currencyForm = this.formBuilder.group({
