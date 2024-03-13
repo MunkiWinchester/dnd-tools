@@ -2,9 +2,8 @@
 
 - [x] Inspiration Buttons
     - [x] Fixed width on mobile
-- [ ] Order
-    - [ ] Calculator first?
-        - [ ] Only on mobile?
+- ~~[ ] Order~~
+    - ~~[ ] Calculator first?~~
 - [ ] Color schema
     - [ ] Light
     - [x] Dark
@@ -15,3 +14,13 @@
     - [ ] Use of platinum?
     - [ ] Use of inspirations?
         - [ ] Maximum
+- [ ] Layout
+    - [ ] Header bar: Increase size of "D&D Tools" (have all the text vertically centered)
+        - H2?
+    - [ ] Mobile: Header bar: Headings aligned with page content headings
+    - [ ] Inspirations
+        - [ ] `justify-content: space-around;`
+        - [ ] background-color `var(--bright-blue)`
+- [ ] Colored currency dots
+- [ ] Exchange favicon
+- [ ] More space between content and footer
