@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NEXT_SESSION } from '@assets/data/data.json';
 import { StorageKey } from '@util/storage-key.enum';
 import dayjs, { Dayjs } from 'dayjs';
 import duration from 'dayjs/plugin/duration';
-import { NEXT_SESSION } from '../../../../assets/data/data.json';
-import { Subject, timer, takeUntil } from 'rxjs';
+import { Subject, takeUntil, timer } from 'rxjs';
 dayjs.extend(duration);
 
 @Component({

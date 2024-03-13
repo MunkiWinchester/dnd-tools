@@ -1,4 +1,3 @@
-@use 'sass:map';
 @import '../../../../assets/scss/variables.scss';
 
 :host {
@@ -18,7 +17,7 @@
 
     .dnd-version {
         align-self: flex-end;
-        padding-block-end: 4px;
+        padding-block: 4px;
         padding-inline-end: 4px;
     }
 }

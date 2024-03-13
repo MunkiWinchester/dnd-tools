@@ -1,8 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
-import { ThemeService } from './services/theme.service';
+import { ThemeService } from '@services/theme.service';
+import { TranslationService } from '@services/translation.service';
+import { AssetImage } from '@util/asset-image.enum';
 import { SvgIconRegistryService } from 'angular-svg-icon';
 import { Subject, takeUntil } from 'rxjs';
-import { AssetImage } from 'src/app/util/asset-image.enum';
 
 @Component({
     selector: 'dnd-root',
@@ -14,7 +15,10 @@ export class AppComponent implements OnDestroy {
     private destroy$: Subject<void> = new Subject();
 
     constructor(
+        //#region Services we need to have in the AppComponent
         private themeService: ThemeService,
+        private translationService: TranslationService,
+        //#endregion Services we need to have in the AppComponent
         private iconReg: SvgIconRegistryService
     ) {
         /* eslint-disable rxjs-angular/prefer-async-pipe */
