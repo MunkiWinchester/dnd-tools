@@ -96,11 +96,17 @@ export class BaseComponent implements OnInit, OnDestroy {
         this.destroy$.complete();
     }
 
-    updateCurrency(type: '-' | '+'): void {
-        const operator: number = (type === '-' ? -1 : 1);
-        this.currencyValue += operator * (this.copperFormControl.value ?? 0);
-        this.currencyValue += operator * (this.silverFormControl.value ?? 0) * this.currencyFactor;
-        this.currencyValue += operator * (this.goldFormControl.value ?? 0) * (this.currencyFactor * this.currencyFactor);
+    updateCurrency(type: '-' | '+' | '0'): void {
+        // Reset to 0
+        if (type === '0') {
+            this.currencyValue = 0;
+        }
+        else {
+            const operator: number = (type === '-' ? -1 : 1);
+            this.currencyValue += operator * (this.copperFormControl.value ?? 0);
+            this.currencyValue += operator * (this.silverFormControl.value ?? 0) * this.currencyFactor;
+            this.currencyValue += operator * (this.goldFormControl.value ?? 0) * (this.currencyFactor * this.currencyFactor);
+        }
 
         localStorage.setItem(StorageKey.Currency, String(this.currencyValue));
         this.currencyForm.reset();

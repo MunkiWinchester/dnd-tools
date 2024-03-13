@@ -57,5 +57,7 @@
         </dnd-button>
         <dnd-button text="BASE.ACTIONS.SUBTRACT" (click)="updateCurrency('-')" [disabled]="!currencyForm.valid">
         </dnd-button>
+        <dnd-button text="BASE.ACTIONS.RESET" (click)="updateCurrency('0')" [disabled]="!currencyForm.valid">
+        </dnd-button>
     </div>
 </div>
