@@ -20,6 +20,7 @@ export class InputNumberComponent implements ControlValueAccessor, AfterViewInit
     //#region Inputs
     @Input() value: number | undefined;
     @Input() disabled: boolean = false;
+    @Input() showCurrencyDot: boolean = false;
     @Input() errors?: Errors;
     @Input() renderErrorMsg: boolean = true;
     @Input() label: string = '';

@@ -29,6 +29,7 @@ export class BaseComponent implements OnInit, OnDestroy {
     currencyValue: number = 0;
     currencyFactor: number = 10;
 
+    platinumFormControl: FormControl<number | null>;
     goldFormControl: FormControl<number | null>;
     silverFormControl: FormControl<number | null>;
     copperFormControl: FormControl<number | null>;
@@ -60,7 +61,9 @@ export class BaseComponent implements OnInit, OnDestroy {
             insp3: this.insp3FormControl
         });
 
-
+        this.platinumFormControl = new FormControl(
+            null
+        );
         this.goldFormControl = new FormControl(
             null
         );
@@ -72,6 +75,7 @@ export class BaseComponent implements OnInit, OnDestroy {
         );
 
         this.currencyForm = this.formBuilder.group({
+            platinum: this.platinumFormControl,
             gold: this.goldFormControl,
             silver: this.silverFormControl,
             copper: this.copperFormControl
@@ -97,7 +101,8 @@ export class BaseComponent implements OnInit, OnDestroy {
             const operator: number = (type === '-' ? -1 : 1);
             this.currencyValue += operator * (this.copperFormControl.value ?? 0);
             this.currencyValue += operator * (this.silverFormControl.value ?? 0) * this.currencyFactor;
-            this.currencyValue += operator * (this.goldFormControl.value ?? 0) * (this.currencyFactor * this.currencyFactor);
+            this.currencyValue += operator * (this.goldFormControl.value ?? 0) * Math.pow(this.currencyFactor, 2);
+            this.currencyValue += operator * (this.platinumFormControl.value ?? 0) * Math.pow(this.currencyFactor, 3);
         }
 
         localStorage.setItem(StorageKey.Currency, String(this.currencyValue));

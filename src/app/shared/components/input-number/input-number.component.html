@@ -1,5 +1,5 @@
 <div class="label" *ngIf="label">
-    {{ label | translate: labelInterpolateParams }}
+    <div class="currency-dot" *ngIf="showCurrencyDot"></div>{{ label | translate: labelInterpolateParams }}
 </div>
 <div>
     <input type="number" placeholder="{{ placeholder | translate: placeholderInterpolateParams }}" [disabled]="disabled"

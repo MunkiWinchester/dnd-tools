@@ -9,7 +9,8 @@
             "TITLE": "Currency",
             "GOLD": "Gold",
             "SILVER": "Silver",
-            "COPPER": "Copper"
+            "COPPER": "Copper",
+            "PLATINUM": "Platinum"
         },
         "GENERAL": {
             "DAYS": "{value} {value, plural, one{day} other{days}}",

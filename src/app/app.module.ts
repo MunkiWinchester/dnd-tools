@@ -19,7 +19,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
         TranslateModule.forRoot({
-            defaultLanguage: 'en',
+            defaultLanguage: 'de',
             useDefaultLang: true,
             compiler: {
                 provide: TranslateCompiler,

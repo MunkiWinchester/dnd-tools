@@ -1,4 +1,4 @@
-<div class="inspiration-container">
+<!-- <div class="inspiration-container">
     <h3>{{ 'BASE.INSPIRATIONS.TITLE'| translate: { count: 2} }}</h3>
     <div class="subheader color-subtitle">
         {{ 'BASE.INSPIRATIONS.X_OF_Y_ACTIVE' | translate: { x: inspirationsAvailable, y: inspirationsTotal } }}
@@ -30,25 +30,32 @@
     </form>
 </div>
 
-<div class="divider" role="separator" aria-label="Divider"></div>
+<div class="divider" role="separator" aria-label="Divider"></div> -->
 
 <div class="currency-container">
     <h3>{{ 'BASE.CURRENCY.TITLE' | translate }}</h3>
     <div class="subheader currency-container-display"
         *ngIf="currencyValue | dndCurrency: currencyFactor; let currency;">
+        <span class="platinum">{{ currency.platinum }}p</span>
         <span class="gold">{{ currency.gold }}g</span>
         <span class="silver">{{ currency.silver }}s</span>
         <span class="copper">{{ currency.copper }}c</span>
     </div>
 
+    <h6 class="my-0">{{ 'BASE.ACTIONS.ADD' | translate }} / {{ 'BASE.ACTIONS.SUBTRACT' | translate }}</h6>
     <form class="currency-container-form" [formGroup]="currencyForm">
-        <dnd-input-number label="BASE.CURRENCY.GOLD" [formControl]="goldFormControl">
+        <dnd-input-number class="platinum" [showCurrencyDot]="true" label="BASE.CURRENCY.PLATINUM"
+            [formControl]="platinumFormControl">
         </dnd-input-number>
 
-        <dnd-input-number label="BASE.CURRENCY.SILVER" [formControl]="silverFormControl">
+        <dnd-input-number class="gold" [showCurrencyDot]="true" label="BASE.CURRENCY.GOLD"
+            [formControl]="goldFormControl">
         </dnd-input-number>
 
-        <dnd-input-number label="BASE.CURRENCY.COPPER" [formControl]="copperFormControl">
+        <dnd-input-number class="silver" [showCurrencyDot]="true" label="BASE.CURRENCY.SILVER" [formControl]="silverFormControl">
+        </dnd-input-number>
+
+        <dnd-input-number class="copper" [showCurrencyDot]="true" label="BASE.CURRENCY.COPPER" [formControl]="copperFormControl">
         </dnd-input-number>
     </form>
 

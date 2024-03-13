@@ -58,6 +58,14 @@
         margin-bottom: calc(var(--_input-spacing) / 2);
     }
 
+    .currency-dot {
+        margin-right: 5px;
+        display: inline-block;
+        height: 5px;
+        width: 5px;
+        border-radius: 100%;
+    }
+
     .caption {
         margin-top: calc(var(--_input-spacing) / 2);
 

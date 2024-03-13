@@ -9,13 +9,14 @@
             "TITLE": "Währung",
             "GOLD": "Gold",
             "SILVER": "Silber",
-            "COPPER": "Kupfer"
+            "COPPER": "Kupfer",
+            "PLATINUM": "Platin"
         },
         "GENERAL": {
             "DAYS": "{value} {value, plural, one{Tag} other{Tage}}",
             "HOURS": "{value} {value, plural, one{Stunde} other{Stunden}}",
             "MINUTES": "{value} {value, plural, one{Minute} other{Minuten}}",
-            "TIME_TILL": "Until {days} {days, plural, one{Tag} other{Tage}} {hours} {hours, plural, one{Stunde} other{Stunden}} {minutes} {minutes, plural, one{Minute} other{Minuten}}",
+            "TIME_TILL": "Noch {days} {days, plural, one{Tag} other{Tage}} {hours} {hours, plural, one{Stunde} other{Stunden}} {minutes} {minutes, plural, one{Minute} other{Minuten}} bis ",
             "GAME_DAY": "Game day"
         },
         "INSPIRATIONS": {
