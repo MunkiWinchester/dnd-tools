@@ -40,6 +40,10 @@
     .inspiration-container {
         width: min(calc(2 * var(--pill-width) + var(--medium-spacing)), 100%);
 
+        .inspiration-svg g {
+            stroke: transparent;
+        }
+
         .pill-group {
             display: flex;
             flex-direction: row;
