@@ -2,7 +2,8 @@
     "BASE": {
         "ACTIONS": {
             "ADD": "Addieren",
-            "SUBTRACT": "Subtrahieren"
+            "SUBTRACT": "Subtrahieren",
+            "RESET": "Zurücksetzen"
         },
         "CURRENCY": {
             "TITLE": "Währung",

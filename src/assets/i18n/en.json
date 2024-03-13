@@ -2,7 +2,8 @@
     "BASE": {
         "ACTIONS": {
             "ADD": "Add",
-            "SUBTRACT": "Subtract"
+            "SUBTRACT": "Subtract",
+            "RESET": "Reset"
         },
         "CURRENCY": {
             "TITLE": "Currency",
