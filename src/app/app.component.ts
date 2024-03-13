@@ -32,6 +32,11 @@ export class AppComponent implements OnDestroy {
                 takeUntil(this.destroy$)
             )
             .subscribe();
+        this.iconReg.loadSvg('assets/images/d20_fill.svg', AssetImage.D20FILL)
+            ?.pipe(
+                takeUntil(this.destroy$)
+            )
+            .subscribe();
         /* eslint-enable rxjs-angular/prefer-async-pipe */
     }
 

@@ -22,5 +22,6 @@
         - [ ] `justify-content: space-around;`
         - [ ] background-color `var(--bright-blue)`
 - [ ] Colored currency dots
-- [ ] Exchange favicon
+- [x] Exchange favicon
 - [ ] More space between content and footer
+- [ ] PWA
