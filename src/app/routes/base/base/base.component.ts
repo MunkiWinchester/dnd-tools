@@ -97,7 +97,7 @@ export class BaseComponent implements OnInit, OnDestroy {
             const operator: number = (type === '-' ? -1 : 1);
             this.currencyValue += operator * (this.copperFormControl.value ?? 0);
             this.currencyValue += operator * (this.silverFormControl.value ?? 0) * this.currencyFactor;
-            this.currencyValue += operator * (this.goldFormControl.value ?? 0) * (this.currencyFactor * this.currencyFactor);
+            this.currencyValue += operator * (this.goldFormControl.value ?? 0) * Math.pow(this.currencyFactor, 2);
         }
 
         localStorage.setItem(StorageKey.Currency, String(this.currencyValue));

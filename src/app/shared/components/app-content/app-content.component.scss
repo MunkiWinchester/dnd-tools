@@ -1,4 +1,5 @@
 @import '../../../../assets/scss/variables.scss';
+@import '../../../../assets/scss/devices.scss';
 
 :host {
     display: flex;
@@ -17,7 +18,7 @@
 
     .dnd-version {
         align-self: flex-end;
-        padding-block: 4px;
+        padding-block: 12px 4px;
         padding-inline-end: 4px;
     }
 }

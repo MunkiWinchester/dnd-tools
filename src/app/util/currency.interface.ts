@@ -3,3 +3,5 @@ export interface ICurrency {
     silver: number;
     copper: number;
 }
+
+export type CurrencyColor = 'gold' | 'silver' | 'copper';

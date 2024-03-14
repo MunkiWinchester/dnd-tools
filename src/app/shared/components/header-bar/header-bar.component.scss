@@ -12,7 +12,8 @@
         @include text-overflow-ellipsis();
     }
 
-    h6 {
+    h6,
+    h3 {
         margin-block: 0;
         background: var(--red-to-pink-to-purple-horizontal-gradient);
         background-clip: text;
@@ -41,7 +42,7 @@
         padding: $container-padding-block $container-padding-inline;
         @include device(mobile) {
             gap: 0;
-            padding: 8px 16px;
+            padding-block: 8px;
         }
 
         .greeting-container {
@@ -49,12 +50,12 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            gap: 8px;
+            gap: 30px;
             flex: 1 0 33%;
             height: 100%;
 
             .today-container {
-                padding: 3px 0 0 30px;
+                padding-top: 3px;
 
                 display: flex;
                 flex-direction: row;

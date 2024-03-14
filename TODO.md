@@ -1,27 +1,28 @@
 # TODO
 
 - [x] Inspiration Buttons
-    - [x] Fixed width on mobile
+  - [x] Fixed width on mobile
 - ~~[ ] Order~~
-    - ~~[ ] Calculator first?~~
+  - ~~[ ] Calculator first?~~
 - [ ] Color schema
-    - [ ] Light
-    - [x] Dark
+  - [ ] Light
+  - [x] Dark
 - [ ] Config section
-    - [ ] Next session time
-    - [ ] Language
-    - [ ] Color schema
-    - [ ] Use of platinum?
-    - [ ] Use of inspirations?
-        - [ ] Maximum
-- [ ] Layout
-    - [ ] Header bar: Increase size of "D&D Tools" (have all the text vertically centered)
-        - H2?
-    - [ ] Mobile: Header bar: Headings aligned with page content headings
-    - [ ] Inspirations
-        - [ ] `justify-content: space-around;`
-        - [ ] background-color `var(--bright-blue)`
-- [ ] Colored currency dots
+  - [ ] Next session time
+  - [ ] Language
+  - [ ] Color schema
+  - [ ] Use of platinum?
+  - [ ] Use of inspirations?
+    - [ ] Maximum
+- [x] Layout
+  - [x] Header bar: Increase size of "D&D Tools" (have all the text vertically centered)
+    - H2?
+  - [x] Mobile: Header bar: Headings aligned with page content headings
+  - [x] Inspirations
+    - [x] `justify-content: space-around;`
+    - [x] background-color `var(--bright-blue)`
+- [x] Colored currency dots
 - [x] Exchange favicon
-- [ ] More space between content and footer
+- [x] More space between content and footer
 - [ ] PWA
+- [ ] App Logo / Favicon

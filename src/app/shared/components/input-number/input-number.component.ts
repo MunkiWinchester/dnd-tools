@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Injector, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, NgControl, Validators } from '@angular/forms';
+import { CurrencyColor } from '@util/currency.interface';
 import { Errors } from '@util/util';
 import _ from 'lodash';
 import { Subject, takeUntil } from 'rxjs';
@@ -20,6 +21,7 @@ export class InputNumberComponent implements ControlValueAccessor, AfterViewInit
     //#region Inputs
     @Input() value: number | undefined;
     @Input() disabled: boolean = false;
+    @Input() currencyDot: CurrencyColor | undefined;
     @Input() errors?: Errors;
     @Input() renderErrorMsg: boolean = true;
     @Input() label: string = '';

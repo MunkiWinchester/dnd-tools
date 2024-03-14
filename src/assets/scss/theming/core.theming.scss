@@ -56,6 +56,16 @@ body {
     color: var(--error);
 }
 
+.gold {
+    color: var(--currency-gold);
+}
+.silver {
+    color: var(--currency-silver);
+}
+.copper {
+    color: var(--currency-copper);
+}
+
 // #endregion Colors
 
 // #region BGs
@@ -88,4 +98,13 @@ body {
     background-color: var(--bg-gray2);
 }
 
+.bg-gold {
+    background-color: var(--currency-gold);
+}
+.bg-silver {
+    background-color: var(--currency-silver);
+}
+.bg-copper {
+    background-color: var(--currency-copper);
+}
 // #endregion BGs
