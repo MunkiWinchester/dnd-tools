@@ -1,4 +1,11 @@
 # D&D Tools
+### [0.0.4](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.3...v0.0.4) (2024-03-17)
+
+
+### Features
+
+* platinum currency ([e5a3b45](https://github.com/MunkiWinchester/dnd-tools/commit/e5a3b45b237dbb42e3303e6b343bb981a8a7a42c))
+
 ### [0.0.3](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.2...v0.0.3) (2024-03-13)
 
 ### [0.0.2](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.1...v0.0.2) (2024-03-13)
