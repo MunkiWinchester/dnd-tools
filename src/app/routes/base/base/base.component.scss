@@ -64,7 +64,7 @@
             align-items: center;
             justify-content: center;
             gap: var(--small-spacing);
-            --pill-accent: var(--bright-blue);
+            --pill-accent: var(--color-primary);
             background: color-mix(in srgb, var(--pill-accent) 10%, transparent);
             color: var(--pill-accent);
             padding-inline: 0.75rem;
@@ -97,7 +97,7 @@
         }
 
         .pill-group .pill {
-            --pill-accent: var(--bright-blue);
+            --pill-accent: var(--color-primary);
         }
     }
 

@@ -1,4 +1,9 @@
-@mixin dark-theme {
+@mixin blood-in-the-water-dark-theme {
+    $color-secondary: #2b4872;
+    $color-quaternary: #de3a31;
+    $color-primary: #718bae;
+    $color-tertiary: #faf6dd;
+
     // Flat
     --primary: #{$white};
     --secondary: #{$color-primary};
@@ -56,19 +61,9 @@
 
     // #region GRADIENT
 
-    --vertical-gradient: linear-gradient(
-        180deg,
-        var(--color-secondary) 0%,
-        var(--color-tertiary) 50%,
-        var(--color-quaternary) 100%
-    );
+    --vertical-gradient: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-quaternary) 100%);
 
-    --horizontal-gradient: linear-gradient(
-        90deg,
-        var(--color-secondary) 0%,
-        var(--color-tertiary) 50%,
-        var(--color-quaternary) 100%
-    );
+    --horizontal-gradient: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-quaternary) 100%);
 
     // #endregion GRADIENT
 }

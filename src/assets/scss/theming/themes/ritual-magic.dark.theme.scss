@@ -1,4 +1,8 @@
-@mixin dark-theme {
+@mixin ritual-magic-dark-theme {
+    $color-secondary: #fa425a;
+    $color-tertiary: #813563;
+    $color-quaternary: #1e9d8a;
+
     // Flat
     --primary: #{$white};
     --secondary: #{$color-primary};

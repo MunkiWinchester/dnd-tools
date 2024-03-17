@@ -1,4 +1,8 @@
-@mixin dark-theme {
+@mixin vhs-reggae-dark-theme {
+    $color-secondary: #f26d36;
+    $color-tertiary: #fbb33f;
+    $color-quaternary: #247a8f;
+
     // Flat
     --primary: #{$white};
     --secondary: #{$color-primary};

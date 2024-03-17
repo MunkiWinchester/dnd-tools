@@ -1,8 +1,8 @@
 @mixin light-theme {
     // Flat
     --primary: #{$gray};
-    --secondary: #{$bright-blue};
-    --tertiary: #{$electric-violet};
+    --secondary: #{$color-primary};
+    --tertiary: #{$color-quaternary};
     --gray: #{$gray};
 
     // Text
@@ -14,10 +14,10 @@
     --on-bg: #{$white};
 
     // Colors
-    --bright-blue: #{$bright-blue};
-    --orange-red: #{$orange-red};
-    --vivid-pink: #{$vivid-pink};
-    --electric-violet: #{$electric-violet};
+    --color-primary: #{$color-primary};
+    --color-secondary: #{$color-secondary};
+    --color-tertiary: #{$color-tertiary};
+    --color-quaternary: #{$color-quaternary};
 
     // Currency
     --currency-gold: #{$currency-gold};
@@ -25,10 +25,10 @@
     --currency-copper: #{$currency-copper};
 
     // Status
-    --info: #{$vivid-pink};
-    --success: #{$bright-blue};
-    --warning: #{$orange-red};
-    --error: #{$orange-red};
+    --info: #{$color-tertiary};
+    --success: #{$color-primary};
+    --warning: #{$color-secondary};
+    --error: #{$color-secondary};
 
     // Background/Flat
     --bg-neutral1: #{$bg-neutral1-light};
@@ -58,16 +58,16 @@
 
     --vertical-gradient: linear-gradient(
         180deg,
-        var(--orange-red) 0%,
-        var(--vivid-pink) 50%,
-        var(--electric-violet) 100%
+        var(--color-secondary) 0%,
+        var(--color-tertiary) 50%,
+        var(--color-quaternary) 100%
     );
 
     --horizontal-gradient: linear-gradient(
         90deg,
-        var(--orange-red) 0%,
-        var(--vivid-pink) 50%,
-        var(--electric-violet) 100%
+        var(--color-secondary) 0%,
+        var(--color-tertiary) 50%,
+        var(--color-quaternary) 100%
     );
 
     // #endregion GRADIENT

@@ -20,7 +20,7 @@
   - [x] Mobile: Header bar: Headings aligned with page content headings
   - [x] Inspirations
     - [x] `justify-content: space-around;`
-    - [x] background-color `var(--bright-blue)`
+    - [x] background-color `var(--color-primary)`
 - [x] Colored currency dots
 - [x] Exchange favicon
 - [x] More space between content and footer

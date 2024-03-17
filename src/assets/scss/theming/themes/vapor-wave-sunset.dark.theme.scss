@@ -1,4 +1,10 @@
-@mixin dark-theme {
+@mixin vapor-wave-sunset-dark-theme {
+    $color-secondary: #fad008;
+    $color-tertiary: #fa8057;
+    $color-quaternary: #eb2ea4;
+    $color-primary: #6072c4;
+    $contrast: #2b0d29;
+
     // Flat
     --primary: #{$white};
     --secondary: #{$color-primary};

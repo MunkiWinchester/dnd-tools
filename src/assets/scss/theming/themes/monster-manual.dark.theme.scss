@@ -1,4 +1,8 @@
-@mixin dark-theme {
+@mixin monster-manual-dark-theme {
+    $color-secondary: #091724;
+    $color-quaternary: #ff0815;
+    $color-primary: #f4e1cb;
+
     // Flat
     --primary: #{$white};
     --secondary: #{$color-primary};
@@ -56,19 +60,9 @@
 
     // #region GRADIENT
 
-    --vertical-gradient: linear-gradient(
-        180deg,
-        var(--color-secondary) 0%,
-        var(--color-tertiary) 50%,
-        var(--color-quaternary) 100%
-    );
+    --vertical-gradient: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-quaternary) 100%);
 
-    --horizontal-gradient: linear-gradient(
-        90deg,
-        var(--color-secondary) 0%,
-        var(--color-tertiary) 50%,
-        var(--color-quaternary) 100%
-    );
+    --horizontal-gradient: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-quaternary) 100%);
 
     // #endregion GRADIENT
 }

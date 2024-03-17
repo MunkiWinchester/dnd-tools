@@ -1,4 +1,8 @@
-@mixin dark-theme {
+@mixin doggo-snacks-dark-theme {
+    $color-secondary: #d8b5ff;
+    $color-tertiary: #1933db;
+    $color-quaternary: #1eae98;
+
     // Flat
     --primary: #{$white};
     --secondary: #{$color-primary};

@@ -1,17 +1,21 @@
-@mixin dark-theme {
+@mixin monster-manual-light-theme {
+    $color-secondary: #091724;
+    $color-quaternary: #ff0815;
+    $color-primary: #f4e1cb;
+
     // Flat
-    --primary: #{$white};
+    --primary: #{$gray};
     --secondary: #{$color-primary};
     --tertiary: #{$color-quaternary};
     --gray: #{$gray};
 
     // Text
-    --title: #{$white};
-    --subtitle: #{$gray-50};
-    --placeholder: #{$gray-70};
-    --disabled: #{$gray-80};
-    --link-disabled: #{$link-disabled-dark};
-    --on-bg: #{$bg-neutral1-dark};
+    --title: #{$gray};
+    --subtitle: #{$gray-70};
+    --placeholder: #{$gray-20};
+    --disabled: #{$gray-30};
+    --link-disabled: #{$link-disabled-light};
+    --on-bg: #{$white};
 
     // Colors
     --color-primary: #{$color-primary};
@@ -31,16 +35,16 @@
     --error: #{$color-secondary};
 
     // Background/Flat
-    --bg-neutral1: #{$bg-neutral1-dark};
-    --bg-neutral2: #{$bg-neutral2-dark};
-    --bg-stroke: #{$gray-80};
-    --bg-container: #{$gray-90};
-    --bg-gray1: #{$bg-neutral2-light};
-    --bg-gray2: #{$gray-10};
+    --bg-neutral1: #{$bg-neutral1-light};
+    --bg-neutral2: #{$bg-neutral2-light};
+    --bg-stroke: #{$gray-10};
+    --bg-container: #{$white};
+    --bg-gray1: #{$bg-neutral2-dark};
+    --bg-gray2: #{$gray-80};
 
     // Scrollbar
-    --scrollbar-color: #{$gray-60};
-    --scrollbar-bg: #{$gray-90};
+    --scrollbar-color: #{$gray-40};
+    --scrollbar-bg: #{$gray-5};
 
     // Button
     --btn-bg-color: transparent;
@@ -52,23 +56,13 @@
     --btn-hovered-bg-color: var(--bg-neutral2);
     --btn-hovered-border-color: var(--primary);
     --btn-pressed-bg-color: var(--bg-neutral2);
-    --btn-pressed-border-color: var(--placeholder);
+    --btn-pressed-border-color: var(--subtitle);
 
     // #region GRADIENT
 
-    --vertical-gradient: linear-gradient(
-        180deg,
-        var(--color-secondary) 0%,
-        var(--color-tertiary) 50%,
-        var(--color-quaternary) 100%
-    );
+    --vertical-gradient: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-quaternary) 100%);
 
-    --horizontal-gradient: linear-gradient(
-        90deg,
-        var(--color-secondary) 0%,
-        var(--color-tertiary) 50%,
-        var(--color-quaternary) 100%
-    );
+    --horizontal-gradient: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-quaternary) 100%);
 
     // #endregion GRADIENT
 }

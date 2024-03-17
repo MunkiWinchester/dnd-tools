@@ -1,12 +1,62 @@
-@import './themes/light.theme.scss';
+// #region Themes
+@import './themes/blood-in-the-water.dark.theme.scss';
+@import './themes/blood-in-the-water.light.theme.scss';
 @import './themes/dark.theme.scss';
+@import './themes/doggo-snacks.dark.theme.scss';
+@import './themes/doggo-snacks.light.theme.scss';
+@import './themes/light.theme.scss';
+@import './themes/monster-manual.dark.theme.scss';
+@import './themes/monster-manual.light.theme.scss';
+@import './themes/ritual-magic.dark.theme.scss';
+@import './themes/ritual-magic.light.theme.scss';
+@import './themes/vapor-wave-sunset.dark.theme.scss';
+@import './themes/vapor-wave-sunset.light.theme.scss';
+@import './themes/vhs-reggae.dark.theme.scss';
+@import './themes/vhs-reggae.light.theme.scss';
 
-[data-theme='light'] {
-    @include light-theme();
+[data-theme='blood-in-the-water-dark'] {
+    @include blood-in-the-water-dark-theme();
+}
+[data-theme='blood-in-the-water-light'] {
+    @include blood-in-the-water-light-theme();
 }
 [data-theme='dark'] {
     @include dark-theme();
 }
+[data-theme='doggo-snacks-dark'] {
+    @include doggo-snacks-dark-theme();
+}
+[data-theme='doggo-snacks-light'] {
+    @include doggo-snacks-light-theme();
+}
+[data-theme='light'] {
+    @include light-theme();
+}
+[data-theme='monster-manual-dark'] {
+    @include monster-manual-dark-theme();
+}
+[data-theme='monster-manual-light'] {
+    @include monster-manual-light-theme();
+}
+[data-theme='ritual-magic-dark'] {
+    @include ritual-magic-dark-theme();
+}
+[data-theme='ritual-magic-light'] {
+    @include ritual-magic-light-theme();
+}
+[data-theme='vapor-wave-sunset-dark'] {
+    @include vapor-wave-sunset-dark-theme();
+}
+[data-theme='vapor-wave-sunset-light'] {
+    @include vapor-wave-sunset-light-theme();
+}
+[data-theme='vhs-reggae-dark'] {
+    @include vhs-reggae-dark-theme();
+}
+[data-theme='vhs-reggae-light'] {
+    @include vhs-reggae-light-theme();
+}
+// #endregion Themes
 
 html,
 body {
