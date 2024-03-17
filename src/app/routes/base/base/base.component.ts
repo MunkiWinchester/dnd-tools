@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { CurrencyService } from '@services/currency.service';
 import { AssetImage } from '@util/asset-image.enum';
@@ -40,6 +40,8 @@ export class BaseComponent implements OnInit, OnDestroy {
     //#endregion Currency
 
     readonly ASSET_IMAGE: typeof AssetImage = AssetImage;
+
+    @ViewChild('dialog') protected dialog?: ElementRef<HTMLDialogElement>;
 
     private destroy$: Subject<void> = new Subject();
 
@@ -94,10 +96,21 @@ export class BaseComponent implements OnInit, OnDestroy {
         this.destroy$.complete();
     }
 
+    showResetConfirmDialog(): void {
+        if (this.currencyValue !== 0) {
+            this.dialog?.nativeElement.showModal();
+        }
+    }
+
+    closeResetConfirmDialog(): void {
+        this.dialog?.nativeElement.close();
+    }
+
     updateCurrency(type: '-' | '+' | '0'): void {
         // Reset to 0
         if (type === '0') {
             this.currencyValue = 0;
+            this.closeResetConfirmDialog();
         }
         else {
             const operator: number = (type === '-' ? -1 : 1);

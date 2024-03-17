@@ -2,6 +2,7 @@
     "BASE": {
         "ACTIONS": {
             "ADD": "Add",
+            "CANCEL": "Cancel",
             "RESET": "Reset",
             "SUBTRACT": "Subtract",
             "SWITCH": "Switch"
@@ -10,6 +11,7 @@
             "COPPER": "Copper",
             "GOLD": "Gold",
             "PLATINUM": "Platinum",
+            "RESET": "This action will reset your currency to 0.\nAre you sure?",
             "SILVER": "Silver",
             "TITLE": "Currency",
             "USE_PLATINUM": "Display platinum"

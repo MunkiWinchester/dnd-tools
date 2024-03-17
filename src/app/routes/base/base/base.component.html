@@ -46,7 +46,7 @@
         <dnd-button text="BASE.ACTIONS.SUBTRACT" (click)="updateCurrency('-')" [disabled]="!currencyForm.valid">
         </dnd-button>
 
-        <dnd-button text="BASE.ACTIONS.RESET" (click)="updateCurrency('0')" [disabled]="!currencyForm.valid"
+        <dnd-button text="BASE.ACTIONS.RESET" (click)="showResetConfirmDialog()" [disabled]="!currencyForm.valid"
             [alternateStyle]="true" class="pt">
         </dnd-button>
     </div>
@@ -56,3 +56,19 @@
         </dnd-input-checkbox>
     </div>
 </div>
+
+<dialog #dialog class="dialog">
+    <h4 class="dialog-title my-0">
+        {{ 'BASE.ACTIONS.RESET' | translate }}
+    </h4>
+    <p class="dialog-content">
+        {{ 'BASE.CURRENCY.RESET' | translate }}
+    </p>
+
+    <div class="dialog-actions">
+        <dnd-button text="BASE.ACTIONS.CANCEL" (click)="closeResetConfirmDialog()">
+        </dnd-button>
+        <dnd-button text="BASE.ACTIONS.RESET" (click)="updateCurrency('0')" [alternateStyle]="true">
+        </dnd-button>
+    </div>
+</dialog>

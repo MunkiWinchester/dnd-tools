@@ -2,6 +2,7 @@
 @import '../../../../assets/scss/animations.scss';
 @import '../../../../assets/scss/colors.scss';
 @import '../../../../assets/scss/variables.scss';
+@import '../../../../assets/scss/typography.scss';
 
 :host {
     height: 100%;
@@ -75,5 +76,39 @@
                 padding-top: var(--small-spacing);
             }
         }
+    }
+
+    .dialog {
+        background-color: var(--bg-neutral2);
+        border-radius: var(--pill-border-radius);
+        border-width: 1px;
+        border-color: var(--placeholder);
+
+        &-title,
+        &-content {
+            color: var(--title);
+        }
+
+        &-content {
+            white-space: pre-line;
+            @include typography-p();
+        }
+
+        &-actions {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: var(--medium-spacing);
+
+            dnd-button {
+                width: 33%;
+            }
+        }
+    }
+
+    ::backdrop {
+        background-color: var(--bg-neutral2);
+        opacity: 0.75;
     }
 }
