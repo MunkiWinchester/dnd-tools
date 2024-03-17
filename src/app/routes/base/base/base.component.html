@@ -4,29 +4,14 @@
         {{ 'BASE.INSPIRATIONS.X_OF_Y_ACTIVE' | translate: { x: inspirationsAvailable, y: inspirationsTotal } }}
     </div>
     <form [formGroup]="inspirationForm" class="pill-group">
-        <div class="pill dnd-cursor dnd-no-user-selection" [ngClass]="{ 'checked': insp1FormControl.value }"
-            (click)="insp1FormControl.setValue(!insp1FormControl.value)">
-            <svg-icon class="dnd-cursor inspiration-svg" [name]="ASSET_IMAGE.D20">
-            </svg-icon>
-            <input class="dnd-cursor" type="checkbox" id="insp-1" formControlName="insp1"
-                [ngStyle]="{ display: 'none' }">
-        </div>
+        <dnd-input-inspiration [formControl]="insp1FormControl">
+        </dnd-input-inspiration>
 
-        <div class="pill dnd-cursor dnd-no-user-selection" [ngClass]="{ 'checked': insp2FormControl.value }" #insp2El
-            (click)="insp2FormControl.setValue(!insp2FormControl.value); insp2El.blur()">
-            <svg-icon class="dnd-cursor inspiration-svg" [name]="ASSET_IMAGE.D20">
-            </svg-icon>
-            <input class="dnd-cursor" type="checkbox" id="insp-2" formControlName="insp2"
-                [ngStyle]="{ display: 'none' }">
-        </div>
+        <dnd-input-inspiration [formControl]="insp2FormControl">
+        </dnd-input-inspiration>
 
-        <div class="pill dnd-cursor dnd-no-user-selection" [ngClass]="{ 'checked': insp3FormControl.value }"
-            (click)="insp3FormControl.setValue(!insp3FormControl.value)">
-            <svg-icon class="dnd-cursor inspiration-svg" [name]="ASSET_IMAGE.D20">
-            </svg-icon>
-            <input class="dnd-cursor" type="checkbox" id="insp-3" formControlName="insp3"
-                [ngStyle]="{ display: 'none' }">
-        </div>
+        <dnd-input-inspiration [formControl]="insp3FormControl">
+        </dnd-input-inspiration>
     </form>
 </div>
 

@@ -76,7 +76,6 @@ export class InputNumberComponent implements ControlValueAccessor, AfterViewInit
         this.focusElement?.nativeElement.focus();
     }
 
-
     ngAfterViewInit(): void {
         const ngControl: NgControl | null = this.injector.get(NgControl, null);
         if (ngControl) {

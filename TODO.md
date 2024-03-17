@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] Add warning dialog when user presses "Reset" button
 - [x] Inspiration Buttons
   - [x] Fixed width on mobile
 - ~~[ ] Order~~
@@ -25,4 +26,4 @@
 - [x] Exchange favicon
 - [x] More space between content and footer
 - [ ] PWA
-- [ ] App Logo / Favicon
+- [x] App Logo / Favicon

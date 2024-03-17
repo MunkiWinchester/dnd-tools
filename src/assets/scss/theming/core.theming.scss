@@ -62,6 +62,12 @@ html,
 body {
     color: var(--title);
     background-color: var(--bg-neutral1);
+
+    --large-spacing: 24px;
+    --medium-spacing: 16px;
+    --small-spacing: 8px;
+    --pill-width: 130px;
+    --pill-border-radius: 45px;
 }
 
 // #region Colors
