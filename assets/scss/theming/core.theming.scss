@@ -1,17 +1,19 @@
-@import './themes/light.theme.scss';
-@import './themes/dark.theme.scss';
+@import './themes/vhs-reggae.dark.theme.scss';
 
-[data-theme='light'] {
-    @include light-theme();
-}
-[data-theme='dark'] {
-    @include dark-theme();
+[data-theme='vhs-reggae-dark'] {
+    @include vhs-reggae-dark-theme();
 }
 
 html,
 body {
     color: var(--title);
     background-color: var(--bg-neutral1);
+
+    --large-spacing: 24px;
+    --medium-spacing: 16px;
+    --small-spacing: 8px;
+    --pill-width: 130px;
+    --pill-border-radius: 25px;
 }
 
 // #region Colors
@@ -56,6 +58,19 @@ body {
     color: var(--error);
 }
 
+.platinum {
+    color: var(--currency-platinum);
+}
+.gold {
+    color: var(--currency-gold);
+}
+.silver {
+    color: var(--currency-silver);
+}
+.copper {
+    color: var(--currency-copper);
+}
+
 // #endregion Colors
 
 // #region BGs
@@ -88,4 +103,16 @@ body {
     background-color: var(--bg-gray2);
 }
 
+.bg-platinum {
+    background-color: var(--currency-platinum);
+}
+.bg-gold {
+    background-color: var(--currency-gold);
+}
+.bg-silver {
+    background-color: var(--currency-silver);
+}
+.bg-copper {
+    background-color: var(--currency-copper);
+}
 // #endregion BGs

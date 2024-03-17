@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Favicon_DnD_Tools_Group" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 192 192"
+    style="enable-background:new 0 0 192 192;" xml:space="preserve">
+    <defs>
+        <linearGradient y2="100%" y1="0%" x2="0%" x1="0%" id="vertical-gradient-vhs">
+            <stop stop-color="#f26d36" offset="0%" id="vertical-gradient-vhs_0" />
+            <stop stop-color="#fbb33f" offset="50%" id="vertical-gradient-vhs_5" />
+            <stop stop-color="#247a8f" offset="100%" id="vertical-gradient-vhs_1" />
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+        .hammer {
+            fill: #030a0c;
+        }
+    </style>
+    <path id="Background" fill="url(#vertical-gradient-vhs)" d="M98.2,0.5l78.2,49.1
+	c0.9,0.6,1.5,1.6,1.5,2.7v89.3c0,1.1-0.6,2.2-1.5,2.7l-78.2,47.2c-1,0.6-2.3,0.6-3.3,0l-79.2-46.5c-1-0.6-1.6-1.6-1.6-2.8v-90
+	c0-1.1,0.6-2.1,1.5-2.7L94.9,0.5C95.9-0.2,97.2-0.2,98.2,0.5z" />
+    <path id="Hammer_Handle" class="hammer" d="M38.5,158.5l42.3-64c1-1.5,2.9-1.9,4.4-0.9l17.5,11.7c1.4,0.9,1.8,2.7,1,4.2L67,175.1
+	L38.5,158.5z" />
+    <path id="Hammer_Head" class="hammer" d="M90.2,89.3c-2.7-1.7-3.8-5.1-2.5-8.1c2.5-5.5,4.2-13.6-7.2-13.4C67.9,68,58.3,71,54.1,72.5
+	c-1.4,0.5-3,0-3.8-1.3l-1.1-1.7c-0.8-1.4-0.6-3.1,0.6-4.1c4.6-3.9,16.8-12.6,34.5-14.5c22.8-2.5,45.8,11.7,45.8,11.7L150.8,74
+	c0.1,0.1,0.2,0.1,0.3,0.2l9.4,6.6c1.4,1,1.8,2.9,0.9,4.3l-14.1,22.4c-0.9,1.5-2.9,1.9-4.4,1l-9.5-6.1c-0.8-0.5-1.3-1.3-1.4-2.3
+	c-0.4-3.4-2-11.7-7-10.6c-3.9,0.9-9.3,5.1-12.7,8.1c-2.1,1.9-5.2,2.1-7.6,0.7L90.2,89.3z" />
+</svg>
