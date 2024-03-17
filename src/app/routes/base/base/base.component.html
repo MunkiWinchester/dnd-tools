@@ -38,13 +38,16 @@
     </dnd-currency-display>
 
     <form class="currency-container-form" [formGroup]="currencyForm">
-        <dnd-input-number [currencyDot]="'gold'" label="BASE.CURRENCY.GOLD" [formControl]="goldFormControl">
+        <dnd-input-number currencyDot="platinum" label="BASE.CURRENCY.PLATINUM" [formControl]="platinumFormControl">
         </dnd-input-number>
 
-        <dnd-input-number [currencyDot]="'silver'" label="BASE.CURRENCY.SILVER" [formControl]="silverFormControl">
+        <dnd-input-number currencyDot="gold" label="BASE.CURRENCY.GOLD" [formControl]="goldFormControl">
         </dnd-input-number>
 
-        <dnd-input-number [currencyDot]="'copper'" label="BASE.CURRENCY.COPPER" [formControl]="copperFormControl">
+        <dnd-input-number currencyDot="silver" label="BASE.CURRENCY.SILVER" [formControl]="silverFormControl">
+        </dnd-input-number>
+
+        <dnd-input-number currencyDot="copper" label="BASE.CURRENCY.COPPER" [formControl]="copperFormControl">
         </dnd-input-number>
     </form>
 

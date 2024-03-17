@@ -2,14 +2,16 @@
 @import '../../../../assets/scss/variables.scss';
 
 :host {
-    --currency-bg: #{$gray-80};
+    --currency-bg: var(--placeholder);
 
     .currency-container-display {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        background-color: var(--currency-bg);
+        // background-color: var(--currency-bg);
+        border: 1px solid var(--currency-bg);
+        box-sizing: border-box;
         border-radius: $border-radius;
         gap: var(--small-spacing);
         padding: calc(var(--small-spacing) / 2);
@@ -19,7 +21,7 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            gap: calc(var(--small-spacing) / 2);
+            gap: calc(var(--small-spacing) / 3);
         }
     }
 }
