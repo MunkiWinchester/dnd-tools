@@ -15,11 +15,9 @@
 
     // Colors
     --bright-blue: #{$bright-blue};
-    --electric-violet: #{$electric-violet};
-    --french-violet: #{$french-violet};
-    --vivid-pink: #{$vivid-pink};
-    --hot-red: #{$hot-red};
     --orange-red: #{$orange-red};
+    --vivid-pink: #{$vivid-pink};
+    --electric-violet: #{$electric-violet};
 
     // Currency
     --currency-gold: #{$currency-gold};
@@ -30,7 +28,7 @@
     --info: #{$vivid-pink};
     --success: #{$bright-blue};
     --warning: #{$orange-red};
-    --error: #{$hot-red};
+    --error: #{$orange-red};
 
     // Background/Flat
     --bg-neutral1: #{$bg-neutral1-dark};
@@ -58,14 +56,14 @@
 
     // #region GRADIENT
 
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+    --vertical-gradient: linear-gradient(
         180deg,
         var(--orange-red) 0%,
         var(--vivid-pink) 50%,
         var(--electric-violet) 100%
     );
 
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+    --horizontal-gradient: linear-gradient(
         90deg,
         var(--orange-red) 0%,
         var(--vivid-pink) 50%,

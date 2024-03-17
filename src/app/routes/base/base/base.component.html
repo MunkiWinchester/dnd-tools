@@ -34,12 +34,8 @@
 
 <div class="currency-container">
     <h3>{{ 'BASE.CURRENCY.TITLE' | translate }}</h3>
-    <div class="subheader currency-container-display"
-        *ngIf="currencyValue | dndCurrency: currencyFactor; let currency;">
-        <span class="gold">{{ currency.gold }}g</span>
-        <span class="silver">{{ currency.silver }}s</span>
-        <span class="copper">{{ currency.copper }}c</span>
-    </div>
+    <dnd-currency-display [currencyValue]="currencyValue" [currencyFactor]="currencyFactor">
+    </dnd-currency-display>
 
     <form class="currency-container-form" [formGroup]="currencyForm">
         <dnd-input-number [currencyDot]="'gold'" label="BASE.CURRENCY.GOLD" [formControl]="goldFormControl">

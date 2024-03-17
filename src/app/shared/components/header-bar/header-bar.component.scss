@@ -15,7 +15,7 @@
     h6,
     h3 {
         margin-block: 0;
-        background: var(--red-to-pink-to-purple-horizontal-gradient);
+        background: var(--horizontal-gradient);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -31,7 +31,7 @@
         border-bottom: 1px solid;
         border-image-slice: 1;
         border-width: 1px;
-        border-image-source: var(--red-to-pink-to-purple-horizontal-gradient);
+        border-image-source: var(--horizontal-gradient);
 
         display: flex;
         flex-direction: row;

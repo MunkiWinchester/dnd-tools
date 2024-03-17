@@ -61,14 +61,6 @@
         color: var(--subtitle);
 
         margin-bottom: calc(var(--_input-spacing) / 2);
-
-        .currency-dot {
-            height: 0.5em;
-            width: 0.5em;
-            border-radius: 100%;
-            border: 1px solid var(--subtitle);
-            box-sizing: border-box;
-        }
     }
 
     .caption {

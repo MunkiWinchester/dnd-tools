@@ -1,0 +1,25 @@
+@import '../../../../assets/scss/colors.scss';
+@import '../../../../assets/scss/variables.scss';
+
+:host {
+    --currency-bg: #{$gray-80};
+
+    .currency-container-display {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--currency-bg);
+        border-radius: $border-radius;
+        gap: var(--small-spacing);
+        padding: calc(var(--small-spacing) / 2);
+
+        .currency-value {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: calc(var(--small-spacing) / 2);
+        }
+    }
+}

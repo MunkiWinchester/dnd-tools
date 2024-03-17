@@ -7,5 +7,5 @@
         "src/assets/i18n"
     ],
     "files.eol": "\n",
-    "svg.preview.background": "custom"
+    "svg.preview.background": "transparent"
 }

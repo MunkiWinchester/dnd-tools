@@ -1,6 +1,9 @@
 <div class="label" *ngIf="label">
-    <div *ngIf="currencyDot" class="currency-dot bg-{{currencyDot}}"></div>
-    <span>{{ label | translate: labelInterpolateParams }}</span>
+    <dnd-currency-dot *ngIf="currencyDot" [color]="currencyDot">
+    </dnd-currency-dot>
+    <span>
+        {{ label | translate: labelInterpolateParams }}
+    </span>
 </div>
 <div>
     <input type="number" placeholder="{{ placeholder | translate: placeholderInterpolateParams }}" [disabled]="disabled"

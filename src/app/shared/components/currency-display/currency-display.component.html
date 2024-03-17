@@ -1,0 +1,21 @@
+<div class="subheader currency-container-display" *ngIf="currencyValue | dndCurrency: currencyFactor; let currency;">
+    <!-- TODO: For each property key in currency -->
+    <div class="currency-value">
+        <span class="gold">{{ currency.gold }}</span>
+        <span *ngIf="!useCurrencyDot" class="gold">g</span>
+        <dnd-currency-dot *ngIf="useCurrencyDot" color="gold">
+        </dnd-currency-dot>
+    </div>
+    <div class="currency-value">
+        <span class="silver">{{ currency.silver }}</span>
+        <span *ngIf="!useCurrencyDot" class="silver">s</span>
+        <dnd-currency-dot *ngIf="useCurrencyDot" color="silver">
+        </dnd-currency-dot>
+    </div>
+    <div class="currency-value">
+        <span class="copper">{{ currency.copper }}</span>
+        <span *ngIf="!useCurrencyDot" class="copper">c</span>
+        <dnd-currency-dot *ngIf="useCurrencyDot" color="copper">
+        </dnd-currency-dot>
+    </div>
+</div>

@@ -33,7 +33,7 @@
 
     .divider {
         width: 1px;
-        background: var(--red-to-pink-to-purple-vertical-gradient);
+        background: var(--vertical-gradient);
         margin-inline: var(--small-spacing);
 
         @include device(mobile) {
@@ -102,23 +102,12 @@
     }
 
     .currency-container {
-        --currency-bg: #{$gray-80};
-
-        &-display {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--currency-bg);
-            border-radius: $border-radius;
-            gap: var(--small-spacing);
-        }
-
         &-form,
         &-actions {
             display: flex;
             flex-direction: column;
             gap: var(--small-spacing);
+            padding-top: var(--medium-spacing);
         }
 
         &-actions {
