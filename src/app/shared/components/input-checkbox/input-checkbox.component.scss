@@ -1,0 +1,113 @@
+@use 'sass:color';
+@import '../../../../assets/scss/typography.scss';
+@import '../../../../assets/scss/devices.scss';
+@import '../../../../assets/scss/utils.scss';
+
+:host {
+    --_input-spacing: 0px;
+
+    .label {
+        @include typography-input();
+        color: var(--subtitle);
+
+        margin-bottom: var(--_input-spacing);
+    }
+
+    .check-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        width: 100%;
+        @include dnd-no-user-selection();
+
+        .ripple {
+            height: 24px;
+            width: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            outline: none;
+
+            svg-icon {
+                svg {
+                    width: 14px;
+                    height: 14px;
+                }
+                display: flex;
+
+                border-radius: 2px;
+                border-width: 1px;
+                border-style: solid;
+
+                @include typography-bold();
+
+                path: {
+                    fill: transparent;
+                }
+            }
+        }
+
+        &:not(.disabled) {
+            .ripple {
+                @include device(desktop) {
+                    &:hover,
+                    &:focus,
+                    &:focus-visible {
+                        background-color: color-mix(in srgb, var(--color-primary) 35%, transparent);
+                    }
+                }
+                &:active {
+                    background-color: color-mix(in srgb, var(--color-primary) 35%, transparent);
+                }
+
+                svg-icon {
+                    border-color: var(--subtitle);
+                }
+
+                &.has-value {
+                    svg-icon {
+                        border-color: var(--subtitle);
+
+                        path {
+                            fill: var(--subtitle);
+                        }
+                    }
+                }
+
+                &.erroneous {
+                    @include device(desktop) {
+                        &:hover,
+                        &:focus,
+                        &:focus-visible {
+                            background-color: color-mix(in srgb, var(--color-error) 90%, transparent);
+                        }
+                    }
+                    &:active {
+                        background-color: color-mix(in srgb, var(--color-error) 80%, transparent);
+                    }
+                    svg-icon {
+                        border-color: var(--error);
+                    }
+                }
+            }
+        }
+
+        &.disabled {
+            @include dnd-cursor-disabled();
+
+            .label {
+                color: var(--disabled);
+            }
+
+            .ripple {
+                svg-icon {
+                    border-color: var(--disabled);
+                }
+            }
+        }
+    }
+}

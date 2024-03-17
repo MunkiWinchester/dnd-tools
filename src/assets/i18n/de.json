@@ -11,7 +11,8 @@
             "GOLD": "Gold",
             "PLATINUM": "Platin",
             "SILVER": "Silber",
-            "TITLE": "Währung"
+            "TITLE": "Währung",
+            "USE_PLATINUM": "Platin anzeigen"
         },
         "GENERAL": {
             "DAYS": "{value} {value, plural, one{Tag} other{Tage}}",

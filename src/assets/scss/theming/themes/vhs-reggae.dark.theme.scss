@@ -1,11 +1,4 @@
 @mixin vhs-reggae-dark-theme {
-    $color-primary: #30879c;
-    $color-secondary: #f26d36;
-    $color-tertiary: #fbb33f;
-    $color-quaternary: #{$color-primary};
-    $bg-neutral1-light: #0f0f0f;
-    $bg-neutral2-light: #1c1c1c;
-
     $currency-gold: #{$color-tertiary};
     $currency-silver: #{$color-primary};
     $currency-copper: #{$color-secondary};
@@ -40,7 +33,7 @@
     --info: #{$color-tertiary};
     --success: #{$color-primary};
     --warning: #{$color-secondary};
-    --error: #{$color-secondary};
+    --error: #{$color-quaternary};
 
     // Background/Flat
     --bg-neutral1: #{$bg-neutral1-dark};
@@ -69,19 +62,9 @@
 
     // #region GRADIENT
 
-    --vertical-gradient: linear-gradient(
-        180deg,
-        var(--color-secondary) 0%,
-        var(--color-tertiary) 50%,
-        var(--color-quaternary) 100%
-    );
+    --vertical-gradient: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-tertiary) 50%, var(--color-quaternary) 100%);
 
-    --horizontal-gradient: linear-gradient(
-        90deg,
-        var(--color-secondary) 0%,
-        var(--color-tertiary) 50%,
-        var(--color-quaternary) 100%
-    );
+    --horizontal-gradient: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-tertiary) 50%, var(--color-quaternary) 100%);
 
     // #endregion GRADIENT
 }

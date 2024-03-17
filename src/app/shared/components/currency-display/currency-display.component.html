@@ -1,26 +1,37 @@
-<div class="subheader currency-container-display" *ngIf="currencyValue | dndCurrency: currencyFactor; let currency;">
-    <!-- TODO: For each property key in currency -->
-    <!-- <div class="currency-value">
+<div class="subheader currency-container-display"
+    *ngLet="currencyService.calculate(this.currencyValue, this.currencyFactor); let currency;">
+    <div class="currency-value" *ngIf="currencyService.usesPlatinum$ | async">
         <span class="platinum">{{ currency.platinum }}</span>
-        <span *ngIf="!useCurrencyDot" class="platinum">p</span>
+        <span *ngIf="!useCurrencyDot" class="platinum">
+            {{ 'BASE.CURRENCY.PLATINUM' | translate | lowercase | slice: 0 : 1 }}
+        </span>
         <dnd-currency-dot *ngIf="useCurrencyDot" color="platinum">
         </dnd-currency-dot>
-    </div> -->
+    </div>
+
     <div class="currency-value">
         <span class="gold">{{ currency.gold }}</span>
-        <span *ngIf="!useCurrencyDot" class="gold">g</span>
+        <span *ngIf="!useCurrencyDot" class="gold">
+            {{ 'BASE.CURRENCY.GOLD' | translate | lowercase | slice: 0 : 1 }}
+        </span>
         <dnd-currency-dot *ngIf="useCurrencyDot" color="gold">
         </dnd-currency-dot>
     </div>
+
     <div class="currency-value">
         <span class="silver">{{ currency.silver }}</span>
-        <span *ngIf="!useCurrencyDot" class="silver">s</span>
+        <span *ngIf="!useCurrencyDot" class="silver">
+            {{ 'BASE.CURRENCY.SILVER' | translate | lowercase | slice: 0 : 1 }}
+        </span>
         <dnd-currency-dot *ngIf="useCurrencyDot" color="silver">
         </dnd-currency-dot>
     </div>
+
     <div class="currency-value">
         <span class="copper">{{ currency.copper }}</span>
-        <span *ngIf="!useCurrencyDot" class="copper">c</span>
+        <span *ngIf="!useCurrencyDot" class="copper">
+            {{ 'BASE.CURRENCY.COPPER' | translate | lowercase | slice: 0 : 1 }}
+        </span>
         <dnd-currency-dot *ngIf="useCurrencyDot" color="copper">
         </dnd-currency-dot>
     </div>

@@ -64,6 +64,10 @@
             padding-top: var(--large-spacing);
         }
 
+        &-use-platinum {
+            padding-block-start: var(--medium-spacing);
+        }
+
         &-actions {
             padding-top: calc(var(--large-spacing) + var(--small-spacing));
 

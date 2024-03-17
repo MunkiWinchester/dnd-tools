@@ -21,12 +21,14 @@
 
 <div class="currency-container">
     <h3>{{ 'BASE.CURRENCY.TITLE' | translate }}</h3>
+
     <dnd-currency-display [currencyValue]="currencyValue" [currencyFactor]="currencyFactor">
     </dnd-currency-display>
 
     <form class="currency-container-form" [formGroup]="currencyForm">
-        <!-- <dnd-input-number currencyDot="platinum" label="BASE.CURRENCY.PLATINUM" [formControl]="platinumFormControl">
-        </dnd-input-number> -->
+        <dnd-input-number *ngIf="currencyService.usesPlatinum$ | async" currencyDot="platinum"
+            label="BASE.CURRENCY.PLATINUM" [formControl]="platinumFormControl">
+        </dnd-input-number>
 
         <dnd-input-number currencyDot="gold" label="BASE.CURRENCY.GOLD" [formControl]="goldFormControl">
         </dnd-input-number>
@@ -47,5 +49,10 @@
         <dnd-button text="BASE.ACTIONS.RESET" (click)="updateCurrency('0')" [disabled]="!currencyForm.valid"
             [alternateStyle]="true" class="pt">
         </dnd-button>
+    </div>
+
+    <div class="currency-container-use-platinum">
+        <dnd-input-checkbox label="BASE.CURRENCY.USE_PLATINUM" [(ngModel)]="currencyService.usesPlatinum">
+        </dnd-input-checkbox>
     </div>
 </div>

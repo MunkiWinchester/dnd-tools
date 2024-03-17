@@ -1,0 +1,10 @@
+<div class="check-box" [ngClass]="{ 'disabled': disabled }">
+    <div class="ripple" [ngClass]="{ 'erroneous': !!errors, 'has-value': value }" (keydown)="keyDown($event)"
+        [tabindex]="disabled ? -1 : 0" #cmp>
+        <svg-icon [name]="ASSET_IMAGE.Check">
+        </svg-icon>
+    </div>
+    <div class="label" *ngIf="label">
+        {{ label | translate: labelInterpolateParams }}
+    </div>
+</div>

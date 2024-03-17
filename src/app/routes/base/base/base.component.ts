@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { CurrencyService } from '@services/currency.service';
 import { AssetImage } from '@util/asset-image.enum';
 import { StorageKey } from '@util/storage-key.enum';
 import { Subject, takeUntil } from 'rxjs';
@@ -43,7 +44,8 @@ export class BaseComponent implements OnInit, OnDestroy {
     private destroy$: Subject<void> = new Subject();
 
     constructor(
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        protected currencyService: CurrencyService
     ) {
         this.insp1FormControl = new FormControl(
             true

@@ -22,6 +22,11 @@ export class AppComponent implements OnDestroy {
         private iconReg: SvgIconRegistryService
     ) {
         /* eslint-disable rxjs-angular/prefer-async-pipe */
+        this.iconReg.loadSvg('assets/images/check.svg', AssetImage.Check)
+            ?.pipe(
+                takeUntil(this.destroy$)
+            )
+            .subscribe();
         this.iconReg.loadSvg('assets/images/d20.svg', AssetImage.D20)
             ?.pipe(
                 takeUntil(this.destroy$)
