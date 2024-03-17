@@ -1,11 +1,11 @@
 <div class="subheader currency-container-display" *ngIf="currencyValue | dndCurrency: currencyFactor; let currency;">
     <!-- TODO: For each property key in currency -->
-    <div class="currency-value">
+    <!-- <div class="currency-value">
         <span class="platinum">{{ currency.platinum }}</span>
         <span *ngIf="!useCurrencyDot" class="platinum">p</span>
         <dnd-currency-dot *ngIf="useCurrencyDot" color="platinum">
         </dnd-currency-dot>
-    </div>
+    </div> -->
     <div class="currency-value">
         <span class="gold">{{ currency.gold }}</span>
         <span *ngIf="!useCurrencyDot" class="gold">g</span>

@@ -15,10 +15,13 @@ export class CurrencyPipe implements PipeTransform {
         };
 
         /* eslint-disable @typescript-eslint/typedef */
+
         ({ currency: currency.copper, remainder: value } = this.calc(value, factor));
         ({ currency: currency.silver, remainder: value } = this.calc(value, factor));
-        ({ currency: currency.gold, remainder: value } = this.calc(value, factor));
-        currency.platinum = value;
+        currency.gold = value;
+        // ({ currency: currency.gold, remainder: value } = this.calc(value, factor));
+        // currency.platinum = value;
+
         /* eslint-enable @typescript-eslint/typedef */
 
         return currency;
