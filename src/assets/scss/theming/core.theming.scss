@@ -106,6 +106,9 @@ body {
     color: var(--error);
 }
 
+.platinum {
+    color: var(--currency-platinum);
+}
 .gold {
     color: var(--currency-gold);
 }
@@ -148,6 +151,9 @@ body {
     background-color: var(--bg-gray2);
 }
 
+.bg-platinum {
+    background-color: var(--currency-platinum);
+}
 .bg-gold {
     background-color: var(--currency-gold);
 }

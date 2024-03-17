@@ -1,14 +1,14 @@
 @mixin vhs-reggae-light-theme {
-    $color-primary: #247a8f;
+    $color-primary: #30879c;
     $color-secondary: #f26d36;
     $color-tertiary: #fbb33f;
-    $color-quaternary: #247a8f;
+    $color-quaternary: #{$color-primary};
     $bg-neutral1-light: #e3e7e8;
     $bg-neutral2-light: #d4d6d6;
 
-    $currency-gold: #fbb33f;
-    $currency-silver: #2387a0;
-    $currency-copper: #f26d36;
+    $currency-gold: #{$color-tertiary};
+    $currency-silver: #{$color-primary};
+    $currency-copper: #{$color-secondary};
 
     // Flat
     --primary: #{$gray};
@@ -31,6 +31,7 @@
     --color-quaternary: #{$color-quaternary};
 
     // Currency
+    --currency-platinum: #{$currency-platinum};
     --currency-gold: #{$currency-gold};
     --currency-silver: #{$currency-silver};
     --currency-copper: #{$currency-copper};

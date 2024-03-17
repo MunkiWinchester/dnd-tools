@@ -1,7 +1,8 @@
 export interface ICurrency {
+    platinum: number;
     gold: number;
     silver: number;
     copper: number;
 }
 
-export type CurrencyColor = 'gold' | 'silver' | 'copper';
+export type CurrencyColor = 'platinum' | 'gold' | 'silver' | 'copper';

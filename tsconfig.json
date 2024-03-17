@@ -27,6 +27,9 @@
             "dom"
         ],
         "paths": {
+            "@environment": [
+                "src/environments/environment.ts"
+            ],
             "@util/*": [
                 "src/app/util/*"
             ],

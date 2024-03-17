@@ -2,21 +2,23 @@
     "BASE": {
         "ACTIONS": {
             "ADD": "Addieren",
+            "RESET": "Zurücksetzen",
             "SUBTRACT": "Subtrahieren",
-            "RESET": "Zurücksetzen"
+            "SWITCH": "Wechseln"
         },
         "CURRENCY": {
-            "TITLE": "Währung",
+            "COPPER": "Kupfer",
             "GOLD": "Gold",
+            "PLATINUM": "Platin",
             "SILVER": "Silber",
-            "COPPER": "Kupfer"
+            "TITLE": "Währung"
         },
         "GENERAL": {
             "DAYS": "{value} {value, plural, one{Tag} other{Tage}}",
+            "GAME_DAY": "Game day",
             "HOURS": "{value} {value, plural, one{Stunde} other{Stunden}}",
             "MINUTES": "{value} {value, plural, one{Minute} other{Minuten}}",
-            "TIME_TILL": "{days} {days, plural, one{Tag} other{Tage}} {hours} {hours, plural, one{Stunde} other{Stunden}} {minutes} {minutes, plural, one{Minute} other{Minuten}} bis zum",
-            "GAME_DAY": "Game day"
+            "TIME_TILL": "{days} {days, plural, one{Tag} other{Tage}} {hours} {hours, plural, one{Stunde} other{Stunden}} {minutes} {minutes, plural, one{Minute} other{Minuten}} bis zum"
         },
         "INSPIRATIONS": {
             "TITLE": "{count, plural, one{Inspiration} other{Inspirationen}}",

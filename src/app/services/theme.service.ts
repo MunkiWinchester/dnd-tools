@@ -34,6 +34,10 @@ export class ThemeService {
         return this.themeChanged$.asObservable();
     }
 
+    getAppliedTheme(): AppApplicableTheme {
+        return this.appliedTheme;
+    }
+
     getCurrentTheme(): AppTheme {
         return this.currentTheme;
     }
