@@ -1,7 +1,14 @@
 @mixin vhs-reggae-light-theme {
+    $color-primary: #247a8f;
     $color-secondary: #f26d36;
     $color-tertiary: #fbb33f;
     $color-quaternary: #247a8f;
+    $bg-neutral1-light: #e3e7e8;
+    $bg-neutral2-light: #d4d6d6;
+
+    $currency-gold: #fbb33f;
+    $currency-silver: #2387a0;
+    $currency-copper: #f26d36;
 
     // Flat
     --primary: #{$gray};

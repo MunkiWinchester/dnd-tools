@@ -18,6 +18,16 @@
             <stop stop-color="#8001c6" offset="80%" id="horizontal-gradient_8" />
             <stop stop-color="#0546ff" offset="100%" id="horizontal-gradient_1" />
         </linearGradient>
+        <linearGradient y2="0%" y1="0%" x2="100%" x1="0%" id="horizontal-gradient-vhs-reggae">
+            <stop stop-color="#f26d36" offset="0%" id="horizontal-gradient-vhs_0" />
+            <stop stop-color="#fbb33f" offset="50%" id="horizontal-gradient-vhs_5" />
+            <stop stop-color="#247a8f" offset="100%" id="horizontal-gradient-vhs_1" />
+        </linearGradient>
+        <linearGradient y2="100%" y1="0%" x2="0%" x1="0%" id="vertical-gradient-vhs-reggae">
+            <stop stop-color="#f26d36" offset="0%" id="vertical-gradient-vhs_0" />
+            <stop stop-color="#fbb33f" offset="50%" id="vertical-gradient-vhs_5" />
+            <stop stop-color="#247a8f" offset="100%" id="vertical-gradient-vhs_1" />
+        </linearGradient>
     </defs>
     <g id="g_d20" stroke="black" stroke-width="1px" stroke-linejoin="round" fill="black">
         <path id="p_d20"

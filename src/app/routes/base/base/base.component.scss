@@ -81,7 +81,7 @@
             }
             &.checked path {
                 transition: fill $animation-duration $animation-function;
-                fill: url(#horizontal-gradient);
+                fill: url(#horizontal-gradient-vhs-reggae);
             }
         }
 
@@ -91,7 +91,7 @@
 
                 path {
                     transition: fill $animation-duration $animation-function;
-                    fill: url(#vertical-gradient);
+                    fill: url(#vertical-gradient-vhs-reggae);
                 }
             }
         }
