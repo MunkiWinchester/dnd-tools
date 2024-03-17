@@ -1,7 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NEXT_SESSION } from '@assets/data/data.json';
-import { environment } from '@environment';
-import { AppApplicableTheme, AppTheme, ThemeService } from '@services/theme.service';
 import { StorageKey } from '@util/storage-key.enum';
 import dayjs, { Dayjs } from 'dayjs';
 import duration from 'dayjs/plugin/duration';
@@ -16,16 +14,8 @@ dayjs.extend(duration);
 export class HeaderBarComponent implements OnInit, OnDestroy {
     durationTillNextSession: duration.Duration = dayjs.duration({ milliseconds: 0 });
 
-    protected isDevMode: boolean = false;
-
     private nextSession: Dayjs = dayjs();
     private destroy$: Subject<void> = new Subject();
-
-    constructor(
-        private themeService: ThemeService
-    ) {
-        this.isDevMode = !environment.production;
-    }
 
     ngOnInit(): void {
         this.loadValuesFromStorage();
@@ -35,15 +25,6 @@ export class HeaderBarComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this.destroy$.next();
         this.destroy$.complete();
-    }
-
-    switchTheme(): void {
-        const theme: AppApplicableTheme = this.themeService.getAppliedTheme();
-        this.themeService.switchTheme(
-            theme === AppTheme.VhsReggaeDark
-                ? AppTheme.VhsReggaeLight
-                : AppTheme.VhsReggaeDark
-        );
     }
 
     private loadValuesFromStorage(): void {

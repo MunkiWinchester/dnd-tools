@@ -8,6 +8,7 @@ import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@
 export class ButtonComponent {
     @Input() disabled: boolean = false;
     @Input() text: string = '';
+    @Input() alternateStyle: boolean = false;
 
     // eslint-disable-next-line @angular-eslint/no-output-native
     @Output() click: EventEmitter<MouseEvent> = new EventEmitter();

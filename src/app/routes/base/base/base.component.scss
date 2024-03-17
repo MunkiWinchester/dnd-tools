@@ -21,8 +21,8 @@
         gap: var(--large-spacing);
     }
 
-    .subheader {
-        margin-bottom: var(--medium-spacing);
+    .inspiration-subheader {
+        margin-top: var(--medium-spacing);
     }
 
     .divider {
@@ -36,7 +36,7 @@
     }
 
     .inspiration-container {
-        width: min(calc(2 * var(--pill-width) + var(--medium-spacing)), 100%);
+        width: min(calc(2 * var(--pill-width) + var(--medium-spacing) + 2px), 100%);
 
         .pill-group {
             display: flex;
@@ -45,6 +45,13 @@
             justify-content: space-around;
             align-items: flex-start;
             gap: var(--medium-spacing);
+            width: 100%;
+
+            border-radius: var(--pill-border-radius);
+            background-color: var(--btn-bg-color);
+            border-color: var(--btn-border-color);
+            border-width: 1px;
+            border-style: solid;
         }
     }
 
@@ -54,11 +61,15 @@
             display: flex;
             flex-direction: column;
             gap: var(--small-spacing);
-            padding-top: var(--medium-spacing);
+            padding-top: var(--large-spacing);
         }
 
         &-actions {
-            padding-top: var(--large-spacing);
+            padding-top: calc(var(--large-spacing) + var(--small-spacing));
+
+            .pt {
+                padding-top: var(--small-spacing);
+            }
         }
     }
 }

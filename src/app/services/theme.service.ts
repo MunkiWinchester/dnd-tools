@@ -45,20 +45,9 @@ export class ThemeService {
     getCurrentThemeIcon(): string {
         switch (this.appliedTheme) {
             case AppTheme.Light:
-            case AppTheme.VaporWaveSunsetLight:
-            case AppTheme.VhsReggaeLight:
-            case AppTheme.DoggoSnacksLight:
-            case AppTheme.RitualMagicLight:
-            case AppTheme.MonsterManualLight:
-            case AppTheme.BloodInTheWaterLight:
                 return 'sun';
             case AppTheme.Dark:
-            case AppTheme.VaporWaveSunsetDark:
             case AppTheme.VhsReggaeDark:
-            case AppTheme.DoggoSnacksDark:
-            case AppTheme.RitualMagicDark:
-            case AppTheme.MonsterManualDark:
-            case AppTheme.BloodInTheWaterDark:
                 return 'moon';
             default:
                 return 'auto';
@@ -95,7 +84,7 @@ export class ThemeService {
     private getSystemTheme(): AppApplicableTheme {
         return this.darkThemeQuery.matches
             ? AppTheme.VhsReggaeDark
-            : AppTheme.VhsReggaeLight;
+            : AppTheme.VhsReggaeDark;
     }
 
     private loadSelectedTheme(): void {
@@ -120,21 +109,10 @@ export class ThemeService {
 }
 
 export enum AppTheme {
-    BloodInTheWaterDark = 'blood-in-the-water-dark',
-    BloodInTheWaterLight = 'blood-in-the-water-light',
     Dark = 'dark',
-    DoggoSnacksDark = 'doggo-snacks-dark',
-    DoggoSnacksLight = 'doggo-snacks-light',
     Light = 'light',
-    MonsterManualDark = 'monster-manual-dark',
-    MonsterManualLight = 'monster-manual-light',
-    RitualMagicDark = 'ritual-magic-dark',
-    RitualMagicLight = 'ritual-magic-light',
     System = 'system',
-    VaporWaveSunsetDark = 'vapor-wave-sunset-dark',
-    VaporWaveSunsetLight = 'vapor-wave-sunset-light',
-    VhsReggaeDark = 'vhs-reggae-dark',
-    VhsReggaeLight = 'vhs-reggae-light'
+    VhsReggaeDark = 'vhs-reggae-dark'
 }
 
 export type AppApplicableTheme = Exclude<AppTheme, AppTheme.System>;

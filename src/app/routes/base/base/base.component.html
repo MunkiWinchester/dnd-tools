@@ -1,8 +1,6 @@
 <div class="inspiration-container">
     <h3>{{ 'BASE.INSPIRATIONS.TITLE'| translate: { count: 2} }}</h3>
-    <div class="subheader color-subtitle">
-        {{ 'BASE.INSPIRATIONS.X_OF_Y_ACTIVE' | translate: { x: inspirationsAvailable, y: inspirationsTotal } }}
-    </div>
+
     <form [formGroup]="inspirationForm" class="pill-group">
         <dnd-input-inspiration [formControl]="insp1FormControl">
         </dnd-input-inspiration>
@@ -13,6 +11,10 @@
         <dnd-input-inspiration [formControl]="insp3FormControl">
         </dnd-input-inspiration>
     </form>
+
+    <div class="inspiration-subheader color-subtitle">
+        {{ 'BASE.INSPIRATIONS.X_OF_Y_ACTIVE' | translate: { x: inspirationsAvailable, y: inspirationsTotal } }}
+    </div>
 </div>
 
 <div class="divider" role="separator" aria-label="Divider"></div>
@@ -41,7 +43,9 @@
         </dnd-button>
         <dnd-button text="BASE.ACTIONS.SUBTRACT" (click)="updateCurrency('-')" [disabled]="!currencyForm.valid">
         </dnd-button>
-        <dnd-button text="BASE.ACTIONS.RESET" (click)="updateCurrency('0')" [disabled]="!currencyForm.valid">
+
+        <dnd-button text="BASE.ACTIONS.RESET" (click)="updateCurrency('0')" [disabled]="!currencyForm.valid"
+            [alternateStyle]="true" class="pt">
         </dnd-button>
     </div>
 </div>
