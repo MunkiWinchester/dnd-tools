@@ -2,15 +2,13 @@
 @import '../../../../assets/scss/variables.scss';
 
 :host {
-    --currency-bg: var(--placeholder);
-
     .currency-container-display {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        // background-color: var(--currency-bg);
-        border: 1px solid var(--currency-bg);
+        background-color: var(--bg-currency);
+        border: 1px solid var(--placeholder);
         box-sizing: border-box;
         border-radius: $border-radius;
         gap: var(--small-spacing);

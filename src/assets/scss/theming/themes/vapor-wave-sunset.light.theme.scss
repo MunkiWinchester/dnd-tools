@@ -44,22 +44,23 @@
     --bg-container: #{$white};
     --bg-gray1: #{$bg-neutral2-dark};
     --bg-gray2: #{$gray-80};
+    --bg-currency: #{$bg-neutral1-dark};
 
     // Scrollbar
     --scrollbar-color: #{$gray-40};
     --scrollbar-bg: #{$gray-5};
 
     // Button
-    --btn-bg-color: transparent;
-    --btn-border-color: var(--primary);
-    --btn-color: var(--title);
-    --btn-disabled-bg-color: var(--bg-container);
-    --btn-disabled-border-color: var(--bg-stroke);
-    --btn-disabled-color: var(--placeholder);
-    --btn-hovered-bg-color: var(--bg-neutral2);
-    --btn-hovered-border-color: var(--primary);
-    --btn-pressed-bg-color: var(--bg-neutral2);
-    --btn-pressed-border-color: var(--subtitle);
+    --btn-bg-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    --btn-border-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+    --btn-color: var(--subtitle);
+    --btn-disabled-bg-color: color-mix(in srgb, var(--color-primary) 5%, transparent);
+    --btn-disabled-border-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    --btn-disabled-color: var(--disabled);
+    --btn-hovered-bg-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+    --btn-hovered-border-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    --btn-pressed-bg-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    --btn-pressed-border-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
 
     // #region GRADIENT
 
