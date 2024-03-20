@@ -1,4 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
+import { environment } from '@environment';
+import { InstallPromptService } from '@services/install-prompt.service';
 import { ThemeService } from '@services/theme.service';
 import { TranslationService } from '@services/translation.service';
 import { AssetImage } from '@util/asset-image.enum';
@@ -19,8 +21,19 @@ export class AppComponent implements OnDestroy {
         private themeService: ThemeService,
         private translationService: TranslationService,
         //#endregion Services we need to have in the AppComponent
+        private installPromptService: InstallPromptService,
         private iconReg: SvgIconRegistryService
     ) {
+        this.registerSVGs();
+        this.installPrompt();
+    }
+
+    ngOnDestroy(): void {
+        this.destroy$.next();
+        this.destroy$.complete();
+    }
+
+    private registerSVGs(): void {
         /* eslint-disable rxjs-angular/prefer-async-pipe */
         this.iconReg.loadSvg('assets/images/check.svg', AssetImage.Check)
             ?.pipe(
@@ -45,8 +58,14 @@ export class AppComponent implements OnDestroy {
         /* eslint-enable rxjs-angular/prefer-async-pipe */
     }
 
-    ngOnDestroy(): void {
-        this.destroy$.next();
-        this.destroy$.complete();
+    private installPrompt(): void {
+        if (environment.production) {
+            setTimeout(
+                () => {
+                    this.installPromptService.addToHomeScreen();
+                },
+                1000 * 2.5
+            );
+        }
     }
 }

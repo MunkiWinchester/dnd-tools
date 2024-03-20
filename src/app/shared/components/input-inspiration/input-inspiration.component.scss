@@ -46,7 +46,7 @@
         }
 
         &:not(.disabled) {
-            @include device(desktop) {
+            @media (hover: hover) {
                 &:hover,
                 &:focus,
                 &:focus-visible {

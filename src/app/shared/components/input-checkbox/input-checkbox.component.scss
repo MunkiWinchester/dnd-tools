@@ -53,7 +53,7 @@
 
         &:not(.disabled) {
             .ripple {
-                @include device(desktop) {
+                @media (hover: hover) {
                     &:hover,
                     &:focus,
                     &:focus-visible {
@@ -79,7 +79,7 @@
                 }
 
                 &.erroneous {
-                    @include device(desktop) {
+                    @media (hover: hover) {
                         &:hover,
                         &:focus,
                         &:focus-visible {

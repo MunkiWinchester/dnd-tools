@@ -1,23 +1,22 @@
 # TODO
 
-- [ ] Add warning dialog when user presses "Reset" button
+- [x] Add warning dialog when user presses "Reset" button
 - [x] Inspiration Buttons
   - [x] Fixed width on mobile
 - ~~[ ] Order~~
   - ~~[ ] Calculator first?~~
-- [ ] Color schema
-  - [ ] Light
+- [x] Color schema
+  - ~~[ ] Light~~
   - [x] Dark
 - [ ] Config section
   - [ ] Next session time
   - [ ] Language
-  - [ ] Color schema
-  - [ ] Use of platinum?
+  - ~~[ ] Color schema~~
+  - [~] Use of platinum?
   - [ ] Use of inspirations?
     - [ ] Maximum
 - [x] Layout
   - [x] Header bar: Increase size of "D&D Tools" (have all the text vertically centered)
-    - H2?
   - [x] Mobile: Header bar: Headings aligned with page content headings
   - [x] Inspirations
     - [x] `justify-content: space-around;`
@@ -25,5 +24,5 @@
 - [x] Colored currency dots
 - [x] Exchange favicon
 - [x] More space between content and footer
-- [ ] PWA
+- [x] PWA
 - [x] App Logo / Favicon

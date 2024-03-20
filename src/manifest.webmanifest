@@ -1,0 +1,17 @@
+{
+    "name": "D&D Tools",
+    "short_name": "DnD Tools",
+    "theme_color": "#2a879d",
+    "background_color": "#101010",
+    "display": "standalone",
+    "scope": "./",
+    "start_url": "./",
+    "icons": [
+        {
+            "src": "assets/images/favicon.svg",
+            "sizes": "maskable any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}
