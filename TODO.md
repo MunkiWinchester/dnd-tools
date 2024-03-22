@@ -26,3 +26,5 @@
 - [x] More space between content and footer
 - [x] PWA
 - [x] App Logo / Favicon
+- [ ] Load `data.json` via http service
+- [ ] Load _data_ with version number (prevent caching for new version)
