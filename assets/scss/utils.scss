@@ -21,11 +21,13 @@
 }
 
 @mixin dnd-context-menu-item-hover {
-    &:hover,
-    &:focus,
-    &:focus-within {
-        background-color: var(--bg-neutral2);
-        border-radius: 4px;
+    @media (hover: hover) {
+        &:hover,
+        &:focus,
+        &:focus-within {
+            background-color: var(--bg-neutral2);
+            border-radius: 4px;
+        }
     }
 
     &:focus,

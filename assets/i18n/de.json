@@ -2,6 +2,7 @@
     "BASE": {
         "ACTIONS": {
             "ADD": "Addieren",
+            "CANCEL": "Abbrechen",
             "RESET": "Zurücksetzen",
             "SUBTRACT": "Subtrahieren",
             "SWITCH": "Wechseln"
@@ -10,8 +11,10 @@
             "COPPER": "Kupfer",
             "GOLD": "Gold",
             "PLATINUM": "Platin",
+            "RESET": "Diese Aktion wird deine Währung auf 0 zurücksetzen.\nBist du dir sicher?",
             "SILVER": "Silber",
-            "TITLE": "Währung"
+            "TITLE": "Währung",
+            "USE_PLATINUM": "Platin anzeigen"
         },
         "GENERAL": {
             "DAYS": "{value} {value, plural, one{Tag} other{Tage}}",
