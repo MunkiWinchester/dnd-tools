@@ -56,7 +56,11 @@ export class HeaderBarComponent implements OnInit, OnDestroy {
 
     private updateDurationTillNextSession(): void {
         this.durationTillNextSession = dayjs.duration(
-            this.nextSession.diff(dayjs())
+            this.nextSession.diff(
+                dayjs()
+                    .second(0)
+                    .subtract(1, 'second')
+            )
         );
     }
 }
