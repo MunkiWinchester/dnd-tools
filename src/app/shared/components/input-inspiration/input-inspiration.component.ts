@@ -42,12 +42,9 @@ export class InputInspirationComponent implements ControlValueAccessor, AfterVie
     }
 
     constructor(
+        private elementRef: ElementRef,
         private injector: Injector
     ) { }
-
-    focus(): void {
-        this.focusElement?.nativeElement.focus();
-    }
 
     ngAfterViewInit(): void {
         const ngControl: NgControl | null = this.injector.get(NgControl, null);
@@ -75,11 +72,21 @@ export class InputInspirationComponent implements ControlValueAccessor, AfterVie
         this.destroy$.complete();
     }
 
+    focus(): void {
+        this.focusElement?.nativeElement.focus();
+    }
+
+    toggle(): void {
+        this.valueChanged();
+    }
+
     valueChanged(): void {
         if (!this.disabled) {
             this.markAsTouched();
             this.value = !this.value;
             this.emitValueChange();
+            this.elementRef.nativeElement.blur();
+            this.focusElement?.nativeElement.blur();
         }
     }
 

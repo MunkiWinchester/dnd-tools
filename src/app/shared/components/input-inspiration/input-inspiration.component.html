@@ -1,6 +1,6 @@
-<div class="pill dnd-no-user-selection" [ngClass]="{ 'checked': value, 'disabled': disabled }" (click)="valueChanged()"
-    [tabindex]="disabled ? -1 : 0" (keydown.enter)="valueChanged()">
+<div class="pill dnd-no-user-selection" [ngClass]="{ 'checked': value, 'disabled': disabled }" (click)="toggle()"
+    [tabindex]="disabled ? -1 : 0" (keydown.enter)="toggle()" #cmp>
     <svg-icon class="inspiration-svg" [name]="ASSET_IMAGE.D20">
     </svg-icon>
-    <input type="checkbox" #cmp>
+    <input type="checkbox">
 </div>
