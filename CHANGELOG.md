@@ -1,4 +1,18 @@
 # D&D Tools
+### [0.0.5](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.4...v0.0.5) (2024-03-22)
+
+
+### Features
+
+* add checkbox to control use of platinum ([05e99a7](https://github.com/MunkiWinchester/dnd-tools/commit/05e99a7f0a08e687ef2fd4aeb12f9a52808dc873))
+* add option to install it as PWA ([0cfe682](https://github.com/MunkiWinchester/dnd-tools/commit/0cfe682c5a7040480fecb8d92dccc28d4f577e11))
+* **currency:** add reset confirmation ([8cd5225](https://github.com/MunkiWinchester/dnd-tools/commit/8cd52252d7b6df31bc488bc848c557fe01eb2bf7))
+
+
+### Bug Fixes
+
+* **header bar:** correct time until next session (was off by 1 minute) ([c775489](https://github.com/MunkiWinchester/dnd-tools/commit/c775489114a16e7d3ddfe9af045a4a1e6fc71759))
+* **inspiration:** correctly looses hover effect after clicking ([cb8c48d](https://github.com/MunkiWinchester/dnd-tools/commit/cb8c48dcb7be9ea9dcc395289cfa8f7d91ca3169))
 
 ### [0.0.4](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.3...v0.0.4) (2024-03-17)
 
