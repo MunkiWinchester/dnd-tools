@@ -4,8 +4,6 @@
 @import '../../../../assets/scss/devices.scss';
 
 :host {
-    @include dnd-no-user-selection;
-
     .greeting-container,
     .greeting-container h6,
     .action-container {
