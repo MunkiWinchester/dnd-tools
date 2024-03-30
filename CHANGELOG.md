@@ -1,4 +1,16 @@
 # D&D Tools
+### [0.0.8](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.7...v0.0.8) (2024-03-30)
+
+
+### Features
+
+* implement april fools addition ([437188e](https://github.com/MunkiWinchester/dnd-tools/commit/437188e068ea5c552eff3d79dd83694249f51384))
+
+
+### Chores
+
+* **header bar:** change text to be select-able ([3b963ad](https://github.com/MunkiWinchester/dnd-tools/commit/3b963adf4d57437dd0ccff1dfaf0f5729ac37087))
+
 ### [0.0.7](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.6...v0.0.7) (2024-03-30)
 
 
