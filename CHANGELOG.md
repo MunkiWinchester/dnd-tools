@@ -1,4 +1,11 @@
 # D&D Tools
+### [0.0.7](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.6...v0.0.7) (2024-03-30)
+
+
+### Bug Fixes
+
+* fix URL to data ([d606da6](https://github.com/MunkiWinchester/dnd-tools/commit/d606da66adc3ecc8438ecbbbad370169d091b5bd))
+
 ### [0.0.6](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.5...v0.0.6) (2024-03-30)
 
 
