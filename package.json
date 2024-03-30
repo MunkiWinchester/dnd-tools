@@ -1,7 +1,7 @@
 {
     "name": "dnd-tools",
     "displayName": "D&D Tools",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "scripts": {
         "build": "ng build",
         "build:prod": "ng build --configuration production",

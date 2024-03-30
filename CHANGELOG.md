@@ -1,4 +1,11 @@
 # D&D Tools
+### [0.0.6](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.5...v0.0.6) (2024-03-30)
+
+
+### Improvements
+
+* load JSON files with current version as query parameter ([4cc3218](https://github.com/MunkiWinchester/dnd-tools/commit/4cc3218b0a963a3d0f6636663f423a5c1b569ede))
+
 ### [0.0.5](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.4...v0.0.5) (2024-03-22)
 
 
