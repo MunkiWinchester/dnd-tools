@@ -21,7 +21,7 @@ export class DataService {
     }
 
     private init(): void {
-        this.httpClient.get<IData>(`../assets/data/data.json?v=${version}`)
+        this.httpClient.get<IData>(`assets/data/data.json?v=${version}`)
             // eslint-disable-next-line rxjs-angular/prefer-async-pipe, rxjs/no-ignored-subscription
             .subscribe((data: IData) => {
                 this.data$.next(data);
