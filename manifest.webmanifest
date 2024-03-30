@@ -1,6 +1,7 @@
 {
     "name": "D&D Tools",
-    "short_name": "DnD Tools",
+    "short_name": "D&D Tools",
+    "description": "Some useful tools for D&D, like a currency calculator",
     "theme_color": "#2a879d",
     "background_color": "#101010",
     "display": "standalone",
@@ -9,8 +10,13 @@
     "icons": [
         {
             "src": "assets/images/favicon.svg",
-            "sizes": "maskable any",
+            "sizes": "any",
             "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "favicon.ico",
+            "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 512x512",
             "purpose": "any"
         }
     ]
