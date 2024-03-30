@@ -26,6 +26,22 @@
         "INSPIRATIONS": {
             "TITLE": "{count, plural, one{Inspiration} other{Inspirationen}}",
             "X_OF_Y_ACTIVE": "{x} von {y} {y, plural, one{Inspiration} other{Inspirationen}} verfügbar"
+        },
+        "SPECIAL_MODE": {
+            "ACTIONS": {
+                "CANCEL": "Nein Danke",
+                "DONATE": "Kaufen"
+            },
+            "DIALOG": {
+                "DESCRIPTION": "Erhalte 3 extra Inspirationen in einem aufregenden neuen Design!",
+                "TITLE": "PROBIER'S AUS!",
+                "SUBTITLE": "D&D Tools",
+                "PREMIUM": "PREMIUM"
+            },
+            "INSPIRATIONS": {
+                "TITLE": "{count, plural, one{Inspiration} other{Inspirationen}}",
+                "X_OF_Y_ACTIVE": "{x} von {y} {y, plural, one{Inspiration} other{Inspirationen}} verfügbar"
+            }
         }
     },
     "MENU": {

@@ -2,22 +2,6 @@
 <svg version="1.1" id="d20" width="110" height="110" xmlns="http://www.w3.org/2000/svg"
     xmlns:svg="http://www.w3.org/2000/svg">
     <defs id="defs_d20">
-        <linearGradient y2="0%" y1="0%" x2="100%" x1="0%" id="horizontal-gradient">
-            <stop stop-color="#f11653" offset="0%" id="horizontal-gradient_0" />
-            <stop stop-color="#fa2c05" offset="20%" id="horizontal-gradient_2" />
-            <stop stop-color="#f637e3" offset="40%" id="horizontal-gradient_4" />
-            <stop stop-color="#8514f5" offset="60%" id="horizontal-gradient_6" />
-            <stop stop-color="#8001c6" offset="80%" id="horizontal-gradient_8" />
-            <stop stop-color="#0546ff" offset="100%" id="horizontal-gradient_1" />
-        </linearGradient>
-        <linearGradient y2="100%" y1="0%" x2="0%" x1="0%" id="vertical-gradient">
-            <stop stop-color="#f11653" offset="0%" id="horizontal-gradient_0" />
-            <stop stop-color="#fa2c05" offset="20%" id="horizontal-gradient_2" />
-            <stop stop-color="#f637e3" offset="40%" id="horizontal-gradient_4" />
-            <stop stop-color="#8514f5" offset="60%" id="horizontal-gradient_6" />
-            <stop stop-color="#8001c6" offset="80%" id="horizontal-gradient_8" />
-            <stop stop-color="#0546ff" offset="100%" id="horizontal-gradient_1" />
-        </linearGradient>
         <linearGradient y2="0%" y1="0%" x2="100%" x1="0%" id="horizontal-gradient-vhs-reggae">
             <stop stop-color="#f26d36" offset="0%" id="horizontal-gradient-vhs_0" />
             <stop stop-color="#fbb33f" offset="50%" id="horizontal-gradient-vhs_5" />
@@ -27,6 +11,19 @@
             <stop stop-color="#f26d36" offset="0%" id="vertical-gradient-vhs_0" />
             <stop stop-color="#fbb33f" offset="50%" id="vertical-gradient-vhs_5" />
             <stop stop-color="#247a8f" offset="100%" id="vertical-gradient-vhs_1" />
+        </linearGradient>
+
+        <linearGradient y2="0%" y1="0%" x2="100%" x1="0%" id="horizontal-gradient-special-mode">
+            <stop stop-color="#ffd169" offset="0%" />
+            <stop stop-color="#f4afcf" offset="33%" />
+            <stop stop-color="#aa9ccc" offset="66%" />
+            <stop stop-color="#85cfc1" offset="100%" />
+        </linearGradient>
+        <linearGradient y2="100%" y1="0%" x2="0%" x1="0%" id="vertical-gradient-special-mode">
+            <stop stop-color="#ffd169" offset="0%" />
+            <stop stop-color="#f4afcf" offset="33%" />
+            <stop stop-color="#aa9ccc" offset="66%" />
+            <stop stop-color="#85cfc1" offset="100%" />
         </linearGradient>
     </defs>
     <g id="g_d20" stroke="black" stroke-width="1px" stroke-linejoin="round" fill="black">

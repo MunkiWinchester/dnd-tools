@@ -2,6 +2,13 @@
     cursor: pointer;
 }
 
+@mixin dnd-no-user-selection {
+    user-select: none;
+    -ms-user-select: none; /* IE10+, Edge */
+    -moz-user-select: none; /* Mozilla */
+    -webkit-user-select: none; /* Safari */
+}
+
 @mixin dnd-cursor-disabled {
     cursor: not-allowed;
     @include dnd-no-user-selection();
@@ -11,13 +18,6 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: $text-overflow;
-}
-
-@mixin dnd-no-user-selection {
-    user-select: none;
-    -ms-user-select: none; /* IE10+, Edge */
-    -moz-user-select: none; /* Mozilla */
-    -webkit-user-select: none; /* Safari */
 }
 
 @mixin dnd-context-menu-item-hover {
