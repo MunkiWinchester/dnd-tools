@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '@shared/shared.module';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { NgLetModule } from 'ng-let';
 import { BaseRoutingModule } from './base-routing.module';
 import { BaseComponent } from './base/base.component';
 
@@ -13,11 +14,12 @@ import { BaseComponent } from './base/base.component';
     ],
     imports: [
         AngularSvgIconModule,
-        CommonModule,
         BaseRoutingModule,
-        SharedModule,
+        CommonModule,
         FormsModule,
+        NgLetModule,
         ReactiveFormsModule,
+        SharedModule,
         TranslateModule.forChild()
     ]
 })

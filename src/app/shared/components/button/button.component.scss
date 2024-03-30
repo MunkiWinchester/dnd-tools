@@ -48,8 +48,7 @@
             }
         }
 
-        &.disabled,
-        &.disabled:hover {
+        &.disabled {
             background-color: var(--btn-disabled-bg-color);
             border-color: var(--btn-disabled-border-color);
             color: var(--btn-disabled-color);

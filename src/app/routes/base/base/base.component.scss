@@ -93,16 +93,22 @@
             color: var(--title);
         }
 
+        &-title.special-mode {
+            white-space: break-spaces;
+            text-align: center;
+        }
+
         &-content {
             white-space: pre-line;
             @include typography-p();
         }
 
         &-actions {
+            padding-top: var(--medium-spacing);
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: space-between;
             gap: var(--medium-spacing);
 
             dnd-button {
@@ -114,5 +120,12 @@
     ::backdrop {
         background-color: var(--bg-neutral2);
         opacity: 0.75;
+    }
+
+    .special-mode-gradient {
+        background: linear-gradient(90deg, #ffd169 0%, #f4afcf 33%, #aa9ccc 66%, #85cfc1 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }

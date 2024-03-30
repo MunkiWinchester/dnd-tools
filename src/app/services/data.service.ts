@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IData } from '@util/data.interface';
-import { Observable, ReplaySubject } from 'rxjs';
+import dayjs from 'dayjs';
+import isBetween from 'dayjs/plugin/isBetween';
+import { Observable, ReplaySubject, map } from 'rxjs';
 import { version } from '../../../package.json';
+dayjs.extend(isBetween);
 
 @Injectable({
     providedIn: 'root'
@@ -18,6 +21,19 @@ export class DataService {
 
     loadData(): Observable<IData> {
         return this.data$.asObservable();
+    }
+
+    isSpecialModeActive(): Observable<boolean> {
+        return this.data$.pipe(
+            map((data: IData) =>
+                dayjs()
+                    .isBetween(
+                        dayjs(data.SPECIAL_MODE.FROM),
+                        dayjs(data.SPECIAL_MODE.TO),
+                        'second'
+                    )
+            )
+        );
     }
 
     private init(): void {

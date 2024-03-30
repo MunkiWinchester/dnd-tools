@@ -1,11 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
 import { environment } from '@environment';
 import { InstallPromptService } from '@services/install-prompt.service';
+import { SvgService } from '@services/svg.service';
 import { ThemeService } from '@services/theme.service';
 import { TranslationService } from '@services/translation.service';
-import { AssetImage } from '@util/asset-image.enum';
-import { SvgIconRegistryService } from 'angular-svg-icon';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
     selector: 'dnd-root',
@@ -21,41 +20,16 @@ export class AppComponent implements OnDestroy {
         private themeService: ThemeService,
         private translationService: TranslationService,
         //#endregion Services we need to have in the AppComponent
-        private installPromptService: InstallPromptService,
-        private iconReg: SvgIconRegistryService
+        private svgService: SvgService,
+        private installPromptService: InstallPromptService
     ) {
-        this.registerSVGs();
+        this.svgService.registerSVGs();
         this.installPrompt();
     }
 
     ngOnDestroy(): void {
         this.destroy$.next();
         this.destroy$.complete();
-    }
-
-    private registerSVGs(): void {
-        /* eslint-disable rxjs-angular/prefer-async-pipe */
-        this.iconReg.loadSvg('assets/images/check.svg', AssetImage.Check)
-            ?.pipe(
-                takeUntil(this.destroy$)
-            )
-            .subscribe();
-        this.iconReg.loadSvg('assets/images/d20.svg', AssetImage.D20)
-            ?.pipe(
-                takeUntil(this.destroy$)
-            )
-            .subscribe();
-        this.iconReg.loadSvg('assets/images/d20_multi.svg', AssetImage.D20MULTI)
-            ?.pipe(
-                takeUntil(this.destroy$)
-            )
-            .subscribe();
-        this.iconReg.loadSvg('assets/images/d20_fill.svg', AssetImage.D20FILL)
-            ?.pipe(
-                takeUntil(this.destroy$)
-            )
-            .subscribe();
-        /* eslint-enable rxjs-angular/prefer-async-pipe */
     }
 
     private installPrompt(): void {

@@ -17,6 +17,39 @@
     </div>
 </div>
 
+<ng-container *ngIf="(isSpecialModeActive$ | async) && hasSpecialModeUnlocked">
+    <div class="divider" role="separator" aria-label="Divider"></div>
+
+    <div class="inspiration-container">
+        <h3>
+            <span class="special-mode-gradient">{{ 'BASE.SPECIAL_MODE.DIALOG.PREMIUM' | translate }}</span>
+            {{ 'BASE.SPECIAL_MODE.INSPIRATIONS.TITLE' | translate: { count: 2} }}
+        </h3>
+
+        <div class="pill-group">
+            <dnd-input-inspiration [value]="true" [specialMode]="true" #specInsp1>
+            </dnd-input-inspiration>
+
+            <dnd-input-inspiration [value]="true" [specialMode]="true" #specInsp2>
+            </dnd-input-inspiration>
+
+            <dnd-input-inspiration [value]="true" [specialMode]="true" #specInsp3>
+            </dnd-input-inspiration>
+        </div>
+
+        <div class="inspiration-subheader color-subtitle"
+            *ngLet="(specInsp1.value ? 1 : 0) + (specInsp2.value ? 1 : 0) + (specInsp3.value ? 1 : 0); let specInspAvailable">
+            {{
+            'BASE.SPECIAL_MODE.INSPIRATIONS.X_OF_Y_ACTIVE'
+            | translate: {
+            x: specInspAvailable,
+            y: 3
+            }
+            }}
+        </div>
+    </div>
+</ng-container>
+
 <div class="divider" role="separator" aria-label="Divider"></div>
 
 <div class="currency-container">
@@ -46,8 +79,8 @@
         <dnd-button text="BASE.ACTIONS.SUBTRACT" (click)="updateCurrency('-')" [disabled]="!currencyForm.valid">
         </dnd-button>
 
-        <dnd-button text="BASE.ACTIONS.RESET" (click)="showResetConfirmDialog()" [disabled]="!currencyForm.valid"
-            [alternateStyle]="true" class="pt">
+        <dnd-button text="BASE.ACTIONS.RESET" (click)="showResetConfirmDialog()"
+            [disabled]="!currencyForm.valid || currencyValue === 0" [alternateStyle]="true" class="pt">
         </dnd-button>
     </div>
 
@@ -58,6 +91,15 @@
 </div>
 
 <dialog #dialog class="dialog">
+    <ng-container [ngSwitch]="activeDialog">
+        <ng-container *ngSwitchCase="'reset'" [ngTemplateOutlet]="resetDialog">
+        </ng-container>
+        <ng-container *ngSwitchCase="'special'" [ngTemplateOutlet]="specialDialog">
+        </ng-container>
+    </ng-container>
+</dialog>
+
+<ng-template #resetDialog>
     <h4 class="dialog-title my-0">
         {{ 'BASE.ACTIONS.RESET' | translate }}
     </h4>
@@ -66,9 +108,32 @@
     </p>
 
     <div class="dialog-actions">
-        <dnd-button text="BASE.ACTIONS.CANCEL" (click)="closeResetConfirmDialog()">
+        <dnd-button text="BASE.ACTIONS.CANCEL" (click)="closeDialog()">
         </dnd-button>
         <dnd-button text="BASE.ACTIONS.RESET" (click)="updateCurrency('0')" [alternateStyle]="true">
         </dnd-button>
     </div>
-</dialog>
+</ng-template>
+
+<ng-template #specialDialog>
+    <h4 class="dialog-title my-0 special-mode">
+        {{ 'BASE.SPECIAL_MODE.DIALOG.TITLE' | translate }}
+    </h4>
+
+    <p class="dialog-content">
+        <span class="weight-black">
+            {{ 'BASE.SPECIAL_MODE.DIALOG.SUBTITLE' | translate }}
+            <span class="special-mode-gradient">
+                {{ 'BASE.SPECIAL_MODE.DIALOG.PREMIUM' | translate }}
+            </span>
+        </span><br />
+        {{ 'BASE.SPECIAL_MODE.DIALOG.DESCRIPTION' | translate }}
+    </p>
+
+    <div class="dialog-actions">
+        <dnd-button text="BASE.SPECIAL_MODE.ACTIONS.CANCEL" (click)="closeDialog()">
+        </dnd-button>
+        <dnd-button text="BASE.SPECIAL_MODE.ACTIONS.DONATE" (click)="confirmSpecialDialog()" [alternateStyle]="true">
+        </dnd-button>
+    </div>
+</ng-template>

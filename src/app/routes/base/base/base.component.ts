@@ -1,16 +1,17 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { CurrencyService } from '@services/currency.service';
+import { DataService } from '@services/data.service';
 import { AssetImage } from '@util/asset-image.enum';
 import { StorageKey } from '@util/storage-key.enum';
-import { Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, of, takeUntil, tap } from 'rxjs';
 
 @Component({
     selector: 'dnd-base',
     templateUrl: './base.component.html',
     styleUrl: './base.component.scss'
 })
-export class BaseComponent implements OnInit, OnDestroy {
+export class BaseComponent implements OnInit, OnDestroy, AfterViewInit {
 
     //#region Inspirations
 
@@ -39,6 +40,11 @@ export class BaseComponent implements OnInit, OnDestroy {
 
     //#endregion Currency
 
+    activeDialog: 'reset' | 'special' = 'reset';
+
+    isSpecialModeActive$: Observable<boolean> = of(false);
+    hasSpecialModeUnlocked: boolean = false;
+
     readonly ASSET_IMAGE: typeof AssetImage = AssetImage;
 
     @ViewChild('dialog') protected dialog?: ElementRef<HTMLDialogElement>;
@@ -47,7 +53,8 @@ export class BaseComponent implements OnInit, OnDestroy {
 
     constructor(
         private formBuilder: FormBuilder,
-        protected currencyService: CurrencyService
+        protected currencyService: CurrencyService,
+        private dataService: DataService
     ) {
         this.insp1FormControl = new FormControl(
             true
@@ -91,6 +98,10 @@ export class BaseComponent implements OnInit, OnDestroy {
         this.loadValuesFromStorage();
     }
 
+    ngAfterViewInit(): void {
+        this.listenToDataService();
+    }
+
     ngOnDestroy(): void {
         this.destroy$.next();
         this.destroy$.complete();
@@ -98,11 +109,12 @@ export class BaseComponent implements OnInit, OnDestroy {
 
     showResetConfirmDialog(): void {
         if (this.currencyValue !== 0) {
+            this.activeDialog = 'reset';
             this.dialog?.nativeElement.showModal();
         }
     }
 
-    closeResetConfirmDialog(): void {
+    closeDialog(): void {
         this.dialog?.nativeElement.close();
     }
 
@@ -110,7 +122,7 @@ export class BaseComponent implements OnInit, OnDestroy {
         // Reset to 0
         if (type === '0') {
             this.currencyValue = 0;
-            this.closeResetConfirmDialog();
+            this.closeDialog();
         }
         else {
             const operator: number = (type === '-' ? -1 : 1);
@@ -122,6 +134,18 @@ export class BaseComponent implements OnInit, OnDestroy {
 
         localStorage.setItem(StorageKey.Currency, String(this.currencyValue));
         this.currencyForm.reset();
+    }
+
+    confirmSpecialDialog(): void {
+        window.open(
+            'https://www.tierschutzbund.de/helfen/spenden/jetzt-spenden#fbform',
+            '_blank'
+        );
+
+        setTimeout(() => {
+            this.hasSpecialModeUnlocked = true;
+            this.closeDialog();
+        }, 250);
     }
 
     private listenToValueChanges(): void {
@@ -149,5 +173,17 @@ export class BaseComponent implements OnInit, OnDestroy {
         this.inspirationsAvailable = (this.insp1FormControl.value ? 1 : 0)
             + (this.insp2FormControl.value ? 1 : 0)
             + (this.insp3FormControl.value ? 1 : 0);
+    }
+
+    private listenToDataService(): void {
+        this.isSpecialModeActive$ = this.dataService.isSpecialModeActive()
+            .pipe(
+                tap((isSpecialModeActive: boolean) => {
+                    if (isSpecialModeActive) {
+                        this.activeDialog = 'special';
+                        this.dialog?.nativeElement.showModal();
+                    }
+                })
+            );
     }
 }

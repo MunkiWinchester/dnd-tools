@@ -3,7 +3,16 @@
 @import '../../../../assets/scss/utils.scss';
 
 :host {
+    --horizontal-gradient: url(#horizontal-gradient-vhs-reggae);
+    --vertical-gradient: url(#vertical-gradient-vhs-reggae);
+
     .pill {
+        &.special-mode {
+            // This switch is by design
+            --horizontal-gradient: url(#vertical-gradient-special-mode);
+            --vertical-gradient: url(#horizontal-gradient-special-mode);
+        }
+
         transition: all $animation-duration $animation-function;
         display: flex;
         justify-content: center;
@@ -37,7 +46,7 @@
         }
 
         &.checked path {
-            fill: url(#horizontal-gradient-vhs-reggae);
+            fill: var(--horizontal-gradient);
         }
 
         &:focus,
@@ -55,7 +64,7 @@
 
                     path {
                         transition: fill $animation-duration $animation-function;
-                        fill: url(#vertical-gradient-vhs-reggae);
+                        fill: var(--vertical-gradient);
                     }
                 }
             }

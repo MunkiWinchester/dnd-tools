@@ -24,6 +24,8 @@ export class InputInspirationComponent implements ControlValueAccessor, AfterVie
     @Input() errors?: Errors;
     @Input() renderErrorMsg: boolean = true;
     @Input() required: boolean = false;
+
+    @Input() specialMode: boolean = false;
     //#endregion Inputs
 
     @Output() valueChange: EventEmitter<boolean | undefined> = new EventEmitter();

@@ -1,4 +1,5 @@
-<div class="pill dnd-no-user-selection" [ngClass]="{ 'checked': value, 'disabled': disabled }" (click)="toggle()"
+<div class="pill dnd-no-user-selection"
+    [ngClass]="{ 'checked': value, 'disabled': disabled, 'special-mode': specialMode }" (click)="toggle()"
     [tabindex]="disabled ? -1 : 0" (keydown.enter)="toggle()" #cmp>
     <svg-icon class="inspiration-svg" [name]="ASSET_IMAGE.D20">
     </svg-icon>

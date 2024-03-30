@@ -38,9 +38,7 @@ export class HeaderBarComponent implements OnInit, OnDestroy {
             )
             // eslint-disable-next-line rxjs-angular/prefer-async-pipe, rxjs/no-ignored-subscription
             .subscribe((data: IData) => {
-                this.nextSession = dayjs(
-                    data.NEXT_SESSION
-                );
+                this.nextSession = dayjs(data.NEXT_SESSION);
                 this.updateDurationTillNextSession();
             });
     }

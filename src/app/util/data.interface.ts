@@ -4,4 +4,8 @@ export interface IData {
     BUILD_TIME: number;
     BUILD_VERSION: string;
     NEXT_SESSION: string;
+    SPECIAL_MODE: {
+        FROM: string;
+        TO: string;
+    };
 }
