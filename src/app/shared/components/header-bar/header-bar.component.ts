@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NEXT_SESSION } from '@assets/data/data.json';
-import { StorageKey } from '@util/storage-key.enum';
+import { DataService } from '@services/data.service';
+import { IData } from '@util/data.interface';
 import dayjs, { Dayjs } from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { Subject, takeUntil, timer } from 'rxjs';
@@ -14,11 +14,15 @@ dayjs.extend(duration);
 export class HeaderBarComponent implements OnInit, OnDestroy {
     durationTillNextSession: duration.Duration = dayjs.duration({ milliseconds: 0 });
 
-    private nextSession: Dayjs = dayjs();
+    nextSession: Dayjs = dayjs();
     private destroy$: Subject<void> = new Subject();
 
+    constructor(
+        private dataService: DataService
+    ) { }
+
     ngOnInit(): void {
-        this.loadValuesFromStorage();
+        this.loadValues();
         this.initTimeTillNextSession();
     }
 
@@ -27,11 +31,18 @@ export class HeaderBarComponent implements OnInit, OnDestroy {
         this.destroy$.complete();
     }
 
-    private loadValuesFromStorage(): void {
-        this.nextSession = dayjs(
-            localStorage.getItem(StorageKey.NextSession) ?? (NEXT_SESSION as string)
-        );
-        this.updateDurationTillNextSession();
+    private loadValues(): void {
+        this.dataService.loadData()
+            .pipe(
+                takeUntil(this.destroy$)
+            )
+            // eslint-disable-next-line rxjs-angular/prefer-async-pipe, rxjs/no-ignored-subscription
+            .subscribe((data: IData) => {
+                this.nextSession = dayjs(
+                    data.NEXT_SESSION
+                );
+                this.updateDurationTillNextSession();
+            });
     }
 
     private initTimeTillNextSession(): void {

@@ -55,6 +55,11 @@
         }
     }
 
+    .inspiration-container,
+    .currency-container {
+        padding-block-end: var(--small-spacing);
+    }
+
     .currency-container {
         &-form,
         &-actions {
