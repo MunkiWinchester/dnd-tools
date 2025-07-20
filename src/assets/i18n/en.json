@@ -3,6 +3,7 @@
         "ACTIONS": {
             "ADD": "Add",
             "CANCEL": "Cancel",
+            "CLOSE": "Close",
             "RESET": "Reset",
             "SUBTRACT": "Subtract",
             "SWITCH": "Switch"
@@ -19,6 +20,7 @@
         "GENERAL": {
             "DAYS": "{value} {value, plural, one{day} other{days}}",
             "GAME_DAY": "Game day",
+            "GAME_DAY_DESCRIPTION": "The next game day is on the {date} at {time}.",
             "HOURS": "{value} {value, plural, one{hour} other{hours}}",
             "MINUTES": "{value} {value, plural, one{minute} other{minutes}}",
             "TIME_TILL": "{days} {days, plural, one{day} other{days}} {hours} {hours, plural, one{hour} other{hours}} {minutes} {minutes, plural, one{minute} other{minutes}} until"
@@ -27,6 +29,17 @@
             "TITLE": "{count, plural, one{Inspiration} other{Inspirations}}",
             "X_OF_Y_ACTIVE": "{x} of {y} {y, plural, one{inspirations} other{inspirations}} available"
         },
+        "SLEEP": {
+            "LABEL": "Long Rest {value}",
+            "RESET": "This action will reset your sleep values.\nAre you sure?",
+            "TITLE": "Sleep",
+            "VALUES": {
+                "BAD": "Bad",
+                "EXCELLENT": "Excellent",
+                "GOOD": "Good",
+                "NEUTRAL": "Neutral"
+            }
+        },
         "SPECIAL_MODE": {
             "ACTIONS": {
                 "CANCEL": "No thanks",
@@ -34,9 +47,9 @@
             },
             "DIALOG": {
                 "DESCRIPTION": "Get 3 extra inspirations in a fancy new design!",
-                "TITLE": "TRY NOW!",
+                "PREMIUM": "PREMIUM",
                 "SUBTITLE": "D&D Tools",
-                "PREMIUM": "PREMIUM"
+                "TITLE": "TRY NOW!"
             },
             "INSPIRATIONS": {
                 "TITLE": "{count, plural, one{inspiration} other{inspirations}}",

@@ -1,10 +1,13 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '@services/data.service';
 import { IData } from '@util/data.interface';
 import dayjs, { Dayjs } from 'dayjs';
 import duration from 'dayjs/plugin/duration';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { Subject, takeUntil, timer } from 'rxjs';
+
 dayjs.extend(duration);
+dayjs.extend(localizedFormat);
 
 @Component({
     selector: 'dnd-header-bar',
@@ -15,6 +18,9 @@ export class HeaderBarComponent implements OnInit, OnDestroy {
     durationTillNextSession: duration.Duration = dayjs.duration({ milliseconds: 0 });
 
     nextSession: Dayjs = dayjs();
+
+    @ViewChild('dialog') protected dialog?: ElementRef<HTMLDialogElement>;
+
     private destroy$: Subject<void> = new Subject();
 
     constructor(
@@ -29,6 +35,14 @@ export class HeaderBarComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this.destroy$.next();
         this.destroy$.complete();
+    }
+
+    openDialog(): void {
+        this.dialog?.nativeElement.showModal();
+    }
+
+    closeDialog(): void {
+        this.dialog?.nativeElement.close();
     }
 
     private loadValues(): void {

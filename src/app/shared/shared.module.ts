@@ -12,6 +12,8 @@ import { HeaderBarComponent } from './components/header-bar/header-bar.component
 import { InputCheckboxComponent } from './components/input-checkbox/input-checkbox.component';
 import { InputInspirationComponent } from './components/input-inspiration/input-inspiration.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
+import { RadioGroupComponent } from './components/radio/radio-group/radio-group.component';
+import { RadioComponent } from './components/radio/radio/radio.component';
 import { ScrollAreaComponent } from './components/scroll-area/scroll-area.component';
 
 @NgModule({
@@ -24,6 +26,8 @@ import { ScrollAreaComponent } from './components/scroll-area/scroll-area.compon
         InputCheckboxComponent,
         InputInspirationComponent,
         InputNumberComponent,
+        RadioComponent,
+        RadioGroupComponent,
         ScrollAreaComponent
     ],
     exports: [
@@ -35,6 +39,8 @@ import { ScrollAreaComponent } from './components/scroll-area/scroll-area.compon
         InputCheckboxComponent,
         InputInspirationComponent,
         InputNumberComponent,
+        RadioComponent,
+        RadioGroupComponent,
         ScrollAreaComponent
     ],
     imports: [

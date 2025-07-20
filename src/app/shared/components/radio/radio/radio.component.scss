@@ -1,0 +1,107 @@
+@import './../../../../../assets/scss/utils.scss';
+@import './../../../../../assets/scss/typography.scss';
+
+:host {
+    $hoverCircleSize: 40px;
+    $borderSize: 22px;
+    $circleSize: 10px;
+    /* subtitle but a bit brighter */
+    $color: oklch(from var(--subtitle) calc(l + 0.025) c h);
+    /* title but a bit darker */
+    $color-checked: oklch(from var(--title) calc(l - 0.125) c h);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 48px;
+    width: 100%;
+
+    color: $color;
+    &.checked {
+        color: $color-checked;
+    }
+
+    @include dnd-cursor();
+    @include typography-input();
+    @include dnd-no-user-selection();
+
+    // Neither the radio nor the group is disabled
+    &:not(.disabled) {
+        &:hover,
+        &:focus,
+        &:focus-visible {
+            .radio {
+                background-color: var(--bg-stroke);
+            }
+        }
+        .radio:focus,
+        .radio:focus-visible {
+            background-color: var(--bg-stroke);
+        }
+
+        &:active {
+            .radio {
+                background-color: var(--bg-stroke);
+            }
+        }
+    }
+
+    // circle background
+    .radio {
+        height: $hoverCircleSize;
+        min-height: $hoverCircleSize;
+        width: $hoverCircleSize;
+        min-width: $hoverCircleSize;
+        border-radius: 100%;
+        position: relative;
+        outline: none;
+
+        // circle border
+        &::before {
+            content: '';
+            display: block;
+            height: $borderSize;
+            width: $borderSize;
+            border: 3px solid $color;
+            border-radius: 100%;
+            box-sizing: border-box;
+            position: absolute;
+            top: calc($hoverCircleSize / 2) - calc($borderSize / 2);
+            left: calc($hoverCircleSize / 2) - calc($borderSize / 2);
+        }
+
+        &.checked::before {
+            border-color: $color-checked;
+        }
+
+        // dot
+        &.checked::after {
+            content: '';
+            display: block;
+            height: $circleSize;
+            width: $circleSize;
+            border-radius: 100%;
+            background-color: $color-checked;
+            position: absolute;
+            top: calc($hoverCircleSize / 2) - calc($circleSize / 2);
+            left: calc($hoverCircleSize / 2) - calc($circleSize / 2);
+        }
+    }
+
+    &.disabled,
+    &.group-disabled {
+        @include dnd-cursor-disabled();
+
+        color: var(--disabled);
+
+        .radio {
+            &::before {
+                border-color: var(--disabled);
+            }
+            &.checked::after {
+                background-color: var(--disabled);
+            }
+        }
+    }
+}

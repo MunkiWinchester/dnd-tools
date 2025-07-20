@@ -1,0 +1,5 @@
+<div class="radio" [ngClass]="{'checked': checked}" [tabIndex]="disabled ? -1 : 0" (keydown)="keyDown($event)" #cmp>
+</div>
+<span class="content">
+    <ng-content></ng-content>
+</span>

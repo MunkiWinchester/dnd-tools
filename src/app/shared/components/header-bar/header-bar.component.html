@@ -2,7 +2,7 @@
     <div class="greeting-container">
         <h3>{{ 'MENU.TITLE' | translate }}</h3>
 
-        <div class="today-container caption uppercase color-subtitle">
+        <div class="today-container caption uppercase color-subtitle dnd-cursor" (click)="openDialog()">
             <span>
                 {{
                 'BASE.GENERAL.TIME_TILL' | translate: {
@@ -18,3 +18,18 @@
         </div>
     </div>
 </div>
+
+<dialog #dialog class="dialog">
+    <h4 class="dialog-title my-0">
+        {{ 'BASE.GENERAL.GAME_DAY' | translate }}
+    </h4>
+    <p class="dialog-content">
+        {{ 'BASE.GENERAL.GAME_DAY_DESCRIPTION' | translate: { date: nextSession.format('L'), time:
+        nextSession.format('LT') } }}
+    </p>
+
+    <div class="dialog-actions">
+        <dnd-button text="BASE.ACTIONS.CLOSE" (click)="closeDialog()">
+        </dnd-button>
+    </div>
+</dialog>

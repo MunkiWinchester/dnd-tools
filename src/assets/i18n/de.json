@@ -3,6 +3,7 @@
         "ACTIONS": {
             "ADD": "Addieren",
             "CANCEL": "Abbrechen",
+            "CLOSE": "Schließen",
             "RESET": "Zurücksetzen",
             "SUBTRACT": "Subtrahieren",
             "SWITCH": "Wechseln"
@@ -19,6 +20,7 @@
         "GENERAL": {
             "DAYS": "{value} {value, plural, one{Tag} other{Tage}}",
             "GAME_DAY": "Game day",
+            "GAME_DAY_DESCRIPTION": "Der nächste Game day ist am {date} um {time}.",
             "HOURS": "{value} {value, plural, one{Stunde} other{Stunden}}",
             "MINUTES": "{value} {value, plural, one{Minute} other{Minuten}}",
             "TIME_TILL": "{days} {days, plural, one{Tag} other{Tage}} {hours} {hours, plural, one{Stunde} other{Stunden}} {minutes} {minutes, plural, one{Minute} other{Minuten}} bis zum"
@@ -27,6 +29,17 @@
             "TITLE": "{count, plural, one{Inspiration} other{Inspirationen}}",
             "X_OF_Y_ACTIVE": "{x} von {y} {y, plural, one{Inspiration} other{Inspirationen}} verfügbar"
         },
+        "SLEEP": {
+            "LABEL": "Lange Nacht {value}",
+            "RESET": "Diese Aktion wird deine Schlaf-Werte zurücksetzen.\nBist du dir sicher?",
+            "TITLE": "Schlaf",
+            "VALUES": {
+                "BAD": "Schlecht",
+                "EXCELLENT": "Exzellent",
+                "GOOD": "Gut",
+                "NEUTRAL": "Neutral"
+            }
+        },
         "SPECIAL_MODE": {
             "ACTIONS": {
                 "CANCEL": "Nein Danke",
@@ -34,9 +47,9 @@
             },
             "DIALOG": {
                 "DESCRIPTION": "Erhalte 3 extra Inspirationen in einem aufregenden neuen Design!",
-                "TITLE": "PROBIER'S AUS!",
+                "PREMIUM": "PREMIUM",
                 "SUBTITLE": "D&D Tools",
-                "PREMIUM": "PREMIUM"
+                "TITLE": "PROBIER'S AUS!"
             },
             "INSPIRATIONS": {
                 "TITLE": "{count, plural, one{Inspiration} other{Inspirationen}}",
