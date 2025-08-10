@@ -1,0 +1,13 @@
+<div class="label" *ngIf="label">
+    {{ label | translate: labelInterpolateParams }}<span class="required-star" *ngIf="required">*</span>
+</div>
+<div class="option-container" #cmp>
+    <dnd-radio *ngFor="let option of options" [value]="option.value" [checked]="isEqual(option.value, value)"
+        [disabled]="isDisabled(option)">
+        {{ option.label | translate }}
+    </dnd-radio>
+</div>
+<div class="caption" *ngIf="caption && !errors">{{ caption | translate }}</div>
+<div class="caption error" *ngIf="renderErrorMsg && errors && errors !== true">
+    {{ errors | json }}
+</div>

@@ -2,7 +2,9 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } fr
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { CurrencyService } from '@services/currency.service';
 import { DataService } from '@services/data.service';
+import { DndRadio } from '@shared/components/radio/radio.types';
 import { AssetImage } from '@util/asset-image.enum';
+import { Sleep } from '@util/sleep.enum';
 import { StorageKey } from '@util/storage-key.enum';
 import { Observable, Subject, of, takeUntil, tap } from 'rxjs';
 
@@ -40,7 +42,36 @@ export class BaseComponent implements OnInit, OnDestroy, AfterViewInit {
 
     //#endregion Currency
 
-    activeDialog: 'reset' | 'special' = 'reset';
+    //#region Sleep
+
+    radioOptions: Array<DndRadio.Option<Sleep>> = [
+        {
+            label: 'BASE.SLEEP.VALUES.BAD',
+            value: Sleep.Bad
+        },
+        {
+            label: 'BASE.SLEEP.VALUES.NEUTRAL',
+            value: Sleep.Neutral
+        },
+        {
+            label: 'BASE.SLEEP.VALUES.GOOD',
+            value: Sleep.Good
+        },
+        {
+            label: 'BASE.SLEEP.VALUES.EXCELLENT',
+            value: Sleep.Excellent
+        }
+    ];
+
+    sleep1FormControl: FormControl<Sleep | null>;
+    sleep2FormControl: FormControl<Sleep | null>;
+    sleep3FormControl: FormControl<Sleep | null>;
+
+    sleepForm: FormGroup;
+
+    //#endregion Sleep
+
+    activeDialog: DialogType = 'resetCurrency';
 
     isSpecialModeActive$: Observable<boolean> = of(false);
     hasSpecialModeUnlocked: boolean = false;
@@ -56,15 +87,9 @@ export class BaseComponent implements OnInit, OnDestroy, AfterViewInit {
         protected currencyService: CurrencyService,
         private dataService: DataService
     ) {
-        this.insp1FormControl = new FormControl(
-            true
-        );
-        this.insp2FormControl = new FormControl(
-            false
-        );
-        this.insp3FormControl = new FormControl(
-            false
-        );
+        this.insp1FormControl = new FormControl(true);
+        this.insp2FormControl = new FormControl(false);
+        this.insp3FormControl = new FormControl(false);
 
         this.inspirationForm = this.formBuilder.group({
             insp1: this.insp1FormControl,
@@ -72,24 +97,28 @@ export class BaseComponent implements OnInit, OnDestroy, AfterViewInit {
             insp3: this.insp3FormControl
         });
 
-        this.platinumFormControl = new FormControl(
-            null
-        );
-        this.goldFormControl = new FormControl(
-            null
-        );
-        this.silverFormControl = new FormControl(
-            null
-        );
-        this.copperFormControl = new FormControl(
-            null
-        );
+
+        this.platinumFormControl = new FormControl(null);
+        this.goldFormControl = new FormControl(null);
+        this.silverFormControl = new FormControl(null);
+        this.copperFormControl = new FormControl(null);
 
         this.currencyForm = this.formBuilder.group({
             platinum: this.platinumFormControl,
             gold: this.goldFormControl,
             silver: this.silverFormControl,
             copper: this.copperFormControl
+        });
+
+
+        this.sleep1FormControl = new FormControl(null);
+        this.sleep2FormControl = new FormControl(null);
+        this.sleep3FormControl = new FormControl(null);
+
+        this.sleepForm = this.formBuilder.group({
+            sleep1: this.sleep1FormControl,
+            sleep2: this.sleep2FormControl,
+            sleep3: this.sleep3FormControl
         });
     }
 
@@ -107,11 +136,26 @@ export class BaseComponent implements OnInit, OnDestroy, AfterViewInit {
         this.destroy$.complete();
     }
 
-    showResetConfirmDialog(): void {
-        if (this.currencyValue !== 0) {
-            this.activeDialog = 'reset';
-            this.dialog?.nativeElement.showModal();
+    showCurrencyResetConfirmDialog(dialogType: DialogType): void {
+        switch (dialogType) {
+            case 'resetCurrency': {
+                if (this.currencyValue !== 0) {
+                    this.activeDialog = 'resetCurrency';
+                    this.dialog?.nativeElement.showModal();
+                }
+            }
+                break;
+
+            case 'resetSleep': {
+                this.activeDialog = 'resetSleep';
+                this.dialog?.nativeElement.showModal();
+            }
+                break;
+
+            default:
+                break;
         }
+
     }
 
     closeDialog(): void {
@@ -136,6 +180,15 @@ export class BaseComponent implements OnInit, OnDestroy, AfterViewInit {
         this.currencyForm.reset();
     }
 
+    resetSleep(): void {
+        this.sleepForm.setValue({
+            sleep1: null,
+            sleep2: null,
+            sleep3: null
+        });
+        this.closeDialog();
+    }
+
     confirmSpecialDialog(): void {
         window.open(
             'https://www.tierschutzbund.de/helfen/spenden/jetzt-spenden#fbform',
@@ -158,6 +211,15 @@ export class BaseComponent implements OnInit, OnDestroy, AfterViewInit {
                 localStorage.setItem(StorageKey.Inspiration, JSON.stringify(this.inspirationForm.value));
                 this.updateAvailableInspirations();
             });
+
+        this.sleepForm.valueChanges
+            .pipe(
+                takeUntil(this.destroy$)
+            )
+            // eslint-disable-next-line rxjs-angular/prefer-async-pipe, rxjs/no-ignored-subscription
+            .subscribe(() => {
+                localStorage.setItem(StorageKey.Sleep, JSON.stringify(this.sleepForm.value));
+            });
     }
 
     private loadValuesFromStorage(): void {
@@ -166,6 +228,11 @@ export class BaseComponent implements OnInit, OnDestroy, AfterViewInit {
         const inspValue: string | null = localStorage.getItem(StorageKey.Inspiration);
         if (inspValue) {
             this.inspirationForm.patchValue(JSON.parse(inspValue) as { [key: string]: unknown });
+        }
+
+        const sleepValue: string | null = localStorage.getItem(StorageKey.Sleep);
+        if (sleepValue) {
+            this.sleepForm.patchValue(JSON.parse(sleepValue) as { [key: string]: unknown });
         }
     }
 
@@ -187,3 +254,5 @@ export class BaseComponent implements OnInit, OnDestroy, AfterViewInit {
             );
     }
 }
+
+export type DialogType = 'resetCurrency' | 'resetSleep' | 'special';

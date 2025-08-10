@@ -1,0 +1,37 @@
+@import '../../../../../assets/scss/colors.scss';
+@import '../../../../../assets/scss/typography.scss';
+@import '../../../../../assets/scss/utils.scss';
+@import '../../../../../assets/scss/variables.scss';
+
+:host {
+    --_input-spacing: 4px;
+
+    .option-container {
+        overflow: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .label {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+
+        @include typography-input;
+        color: var(--subtitle);
+
+        margin-bottom: calc(var(--_input-spacing) / 2);
+    }
+
+    .caption {
+        margin-top: calc(var(--_input-spacing) / 2);
+
+        &.error {
+            color: var(--error);
+        }
+    }
+
+    @include dnd-no-placeholder-select();
+}

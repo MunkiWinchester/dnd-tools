@@ -60,13 +60,17 @@
         padding-block-end: var(--small-spacing);
     }
 
-    .currency-container {
+    .currency-container-form {
+        padding-top: var(--large-spacing);
+    }
+
+    .currency-container,
+    .sleep-container {
         &-form,
         &-actions {
             display: flex;
             flex-direction: column;
             gap: var(--small-spacing);
-            padding-top: var(--large-spacing);
         }
 
         &-use-platinum {
@@ -108,7 +112,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
             gap: var(--medium-spacing);
 
             dnd-button {

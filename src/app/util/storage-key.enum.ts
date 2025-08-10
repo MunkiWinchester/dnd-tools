@@ -1,5 +1,6 @@
 export enum StorageKey {
     AppInstallDeclined = 'appInstallDeclined',
     Inspiration = 'inspiration',
-    Currency = 'currency'
+    Currency = 'currency',
+    Sleep = 'sleep'
 }

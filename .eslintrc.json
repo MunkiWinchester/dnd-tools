@@ -268,6 +268,7 @@
                 "@typescript-eslint/no-confusing-non-null-assertion": "error",
                 "@typescript-eslint/no-confusing-void-expression": "error",
                 "@typescript-eslint/no-invalid-void-type": "error",
+                "@typescript-eslint/no-namespace": "off",
                 "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
                 "@typescript-eslint/no-unnecessary-condition": "error",
                 "@typescript-eslint/no-unnecessary-type-constraint": "error",
