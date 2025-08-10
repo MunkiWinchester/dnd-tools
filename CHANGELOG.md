@@ -1,4 +1,11 @@
 # D&D Tools
+### [0.0.9](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.8...v0.0.9) (2025-08-10)
+
+
+### Features
+
+* add sleep tracker ([620915d](https://github.com/MunkiWinchester/dnd-tools/commit/620915d4b98717e24cec16e5847ba41fc5f0b994))
+
 ### [0.0.8](https://github.com/MunkiWinchester/dnd-tools/compare/v0.0.7...v0.0.8) (2024-03-30)
 
 
